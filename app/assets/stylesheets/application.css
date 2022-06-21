@@ -258,6 +258,13 @@ footer .logo {
   width: 150px;
 }
 
+footer h1 {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--footer-fg);
+}
+
 footer nav {
   display: flex;
   flex-direction: column;

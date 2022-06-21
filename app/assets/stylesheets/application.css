@@ -97,35 +97,35 @@ header .search input {
   color: var(--header-bg);
 }
 
-header .sign-in-sign-up {
+header .login-register {
   display: flex;
 }
 
 @media screen and (max-width: 410px) {
-  header .sign-in-sign-up {
+  header .login-register {
     display: none;
   }
 }
 
-header .sign-in,
-header .sign-up {
+header .login,
+header .register {
   padding: 0.5em 1em;
   margin: 0.5em;
   border: 1px solid var(--header-fg);
   text-decoration: none;
 }
 
-header .sign-in {
+header .login {
   color: var(--header-fg);
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-header .sign-in:hover {
+header .login:hover {
   background-color: var(--header-fg);
   color: var(--header-bg);
 }
 
-header .sign-up {
+header .register {
   background-color: var(--header-fg);
   color: var(--header-bg);
 }
@@ -186,35 +186,35 @@ header .hamburger .line {
   color: var(--header-bg);
 }
 
-#menu .sign-in-sign-up {
+#menu .login-register {
   display: flex;
 }
 
 @media screen and (min-width: 410px) {
-  #menu .sign-in-sign-up {
+  #menu .login-register {
     display: none;
   }
 }
 
-#menu .sign-in,
-#menu .sign-up {
+#menu .login,
+#menu .register {
   padding: 0.5em 1em;
   margin: 0.5em;
   border: 1px solid var(--header-fg);
   text-decoration: none;
 }
 
-#menu .sign-in {
+#menu .login {
   color: var(--header-fg);
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-#menu .sign-in:hover {
+#menu .login:hover {
   background-color: var(--header-fg);
   color: var(--header-bg);
 }
 
-#menu .sign-up {
+#menu .register {
   background-color: var(--header-fg);
   color: var(--header-bg);
 }

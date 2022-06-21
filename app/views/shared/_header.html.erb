@@ -1,5 +1,11 @@
 <header>
-  <%= image_tag 'logo-light.png', class: 'logo' %>
+  <% if request.fullpath == root_path %>
+    <%= image_tag 'logo-light.png', class: 'logo' %>
+  <% else %>
+    <a href="<%= root_path %>" class="logo-link">
+      <%= image_tag 'logo-light.png', class: 'logo' %>
+    </a>
+  <% end %>
   <%= render 'shared/nav'%>
   <%= render 'shared/login-register' %>
   <div class="hamburger">

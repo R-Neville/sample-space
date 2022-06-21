@@ -35,6 +35,12 @@ a {
   cursor: pointer;
 }
 
+.logo-link {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body {
   display: flex;
@@ -69,7 +75,8 @@ header nav {
     display: none;
   }
 
-  header .logo {
+  header .logo,
+  header .logo-link {
     margin-right: auto;
   }
 }

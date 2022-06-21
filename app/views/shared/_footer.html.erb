@@ -1,5 +1,11 @@
 <footer>
-  <%= image_tag 'logo-dark.png', class: 'logo' %>
+  <% if request.fullpath == root_path %>
+    <%= image_tag 'logo-dark.png', class: 'logo' %>
+  <% else %>
+    <a href="<%= root_path %>" class="logo-link">
+      <%= image_tag 'logo-dark.png', class: 'logo' %>
+    </a>
+  <% end %>
   <%= render 'shared/nav' %>
   <p>&copy; Robert Neville 2022</p>
 </footer>

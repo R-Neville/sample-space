@@ -152,6 +152,39 @@ header .register {
   color: var(--header-bg);
 }
 
+header .user-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 35px;
+}
+
+header .user-menu .icon {
+  height: 35px;
+}
+
+header .user-menu .dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: var(--header-fg);
+}
+
+header .user-menu .dropdown a {
+  width: 100%;
+  padding: 0.5em;
+  text-decoration: none;
+  color: var(--header-bg);
+}
+
+header .user-menu:hover .dropdown {
+  display: flex;
+}
+
 header .hamburger {
   display: flex;
   flex-direction: column;

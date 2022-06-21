@@ -6,8 +6,15 @@
       <%= image_tag 'logo-light.png', class: 'logo' %>
     </a>
   <% end %>
+  
   <%= render 'shared/nav'%>
-  <%= render 'shared/login-register' %>
+  
+  <% if current_user %>
+    <%= render 'shared/user_menu' %>
+  <% else %>
+    <%= render 'shared/login-register' %>
+  <% end %>
+  
   <div class="hamburger">
     <div class="line"></div>
     <div class="line"></div>

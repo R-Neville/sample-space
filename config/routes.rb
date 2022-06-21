@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/creators', to: 'pages#creators'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
+  get '/profile', to: 'pages#profile'
 end

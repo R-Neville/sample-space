@@ -168,7 +168,7 @@ header .hamburger .line {
 }
 
 #menu {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   padding: 1em;

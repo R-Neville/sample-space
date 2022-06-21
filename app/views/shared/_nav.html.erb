@@ -1,6 +1,9 @@
 <nav>
-  <a href="/browse">browse</a>
-  <a href="/creators">creators</a>
-  <a href="/about">about</a>
-  <a href="/contact">contact</a>
+  <% @nav_links.each do |link_info| %>
+    <% if link_info[:url] == request.fullpath %>
+      <a class="current"><%= link_info[:text] %></a>
+    <% else %>
+      <a href="<%= link_info[:url] %>"><%= link_info[:text] %></a>
+    <% end %>
+  <% end %>
 </nav>

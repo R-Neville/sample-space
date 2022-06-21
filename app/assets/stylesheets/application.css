@@ -31,6 +31,10 @@
   font-family: 'Cousine';
 }
 
+a {
+  cursor: pointer;
+}
+
 html,
 body {
   display: flex;
@@ -79,6 +83,11 @@ header nav a {
 }
 
 header nav a:hover {
+  background-color: var(--header-fg);
+  color: var(--header-bg);
+}
+
+header nav a.current {
   background-color: var(--header-fg);
   color: var(--header-bg);
 }
@@ -186,6 +195,11 @@ header .hamburger .line {
   color: var(--header-bg);
 }
 
+#menu nav a.current {
+  background-color: var(--header-fg);
+  color: var(--header-bg);
+}
+
 #menu .login-register {
   display: flex;
 }
@@ -254,6 +268,11 @@ footer nav a {
 }
 
 footer nav a:hover {
+  background-color: var(--footer-fg);
+  color: var(--footer-bg);
+}
+
+footer nav a.current {
   background-color: var(--footer-fg);
   color: var(--footer-bg);
 }

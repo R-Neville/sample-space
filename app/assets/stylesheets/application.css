@@ -14,11 +14,14 @@
  *= require_self
  */
 
+/* Colors: */
 :root {
   --header-bg: #374548;
   --header-fg: #dbe2e3;
   --footer-bg: #dbe2e3;
   --footer-fg: #374548;
+  --devise-wrapper-bg: #374548;
+  --devise-content-bg: #dbe2e3;
 }
 
 @font-face {
@@ -31,7 +34,8 @@
   font-family: 'Cousine';
 }
 
-a {
+a,
+button {
   cursor: pointer;
 }
 
@@ -50,6 +54,8 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+
+/* Main layout styles: */
 
 header {
   display: flex;
@@ -240,6 +246,26 @@ header .hamburger .line {
   color: var(--header-bg);
 }
 
+.alert {
+  padding: 1em;
+  border: 1px solid #C0392B;
+  border-radius: 3px;
+  margin-bottom: 1em;
+  background-color: #FADBD8;
+  color: #C0392B;
+  text-align: center;
+}
+
+.notice {
+  padding: 1em;
+  border: 1px solid #16A085;
+  border-radius: 3px;
+  margin-bottom: 1em;
+  background-color: #D5F5E3;
+  color: #16A085;
+  text-align: center;
+}
+
 main {
   flex-grow: 1;
   padding: 1em;
@@ -293,4 +319,85 @@ footer nav a.current {
 
 footer p {
   color: var(--footer-fg);
+}
+
+/* Devise layout styles: */
+
+.devise-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--devise-wrapper-bg);
+}
+
+.devise-wrapper .logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devise-wrapper .logo {
+  width: 150px;
+}
+
+.devise-wrapper .logo-wrapper h1 {
+  color: var(--devise-content-bg);
+}
+
+.devise-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 250px;
+  border-radius: 3px;
+  background-color: var(--devise-content-bg);
+}
+
+.devise-content h2 {
+  text-align: center;
+  color: var(--devise-wrapper-bg);
+}
+
+.devise-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.devise-content input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 1em;
+  font-size: 1em;
+  color: var(--devise-wrapper-bg);
+}
+
+.devise-content form .sign-in,
+.devise-content form .sign-up {
+  border: none;
+  background-color: var(--devise-wrapper-bg);
+  color: var(--devise-content-bg);
+  cursor: pointer;
+}
+
+.devise-content p {
+  text-align: center;
+}
+
+.devise-content > .sign-up,
+.devise-content > .sign-in {
+  padding: 0.5em 1em;
+  width: 100px;
+  margin: auto;
+  background-color: var(--devise-wrapper-bg);
+  text-decoration: none;
+  color: var(--devise-content-bg);
+}
+
+.devise-content .forgot {
+  margin: 1em 0;
+  text-align: center;
 }

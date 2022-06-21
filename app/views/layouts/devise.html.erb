@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleSpace</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="devise-wrapper">
+      <div class="logo-wrapper">
+        <a href="<%= root_path %>" class="logo-link">
+          <%= image_tag 'logo-light.png', class: 'logo' %>
+        </a>
+        <h1>SampleSpace</h1>
+      </div>
+      <div class="devise-content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

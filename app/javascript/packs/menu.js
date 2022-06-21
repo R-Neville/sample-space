@@ -3,22 +3,24 @@ document.addEventListener('turbolinks:load', function() {
   const headerHamburger = document.querySelector('header .hamburger');
   let menuVisible = false;
 
-  window.onresize =  function() {
-    if (window.innerWidth >= 760 && menuVisible) {
-      menu.style.display = 'none';
-      menuVisible = false;
-    }
-  };
-
-  headerHamburger.addEventListener('click', () => {
-    if (menuVisible) {
-      slideUp(menu, 10);
-      menuVisible = false;
-    } else {
-      slideDown(menu, 'flex', 10);
-      menuVisible = true;
-    }
-  });
+  if (menu) {
+    window.onresize =  function() {
+      if (window.innerWidth >= 760 && menuVisible) {
+        menu.style.display = 'none';
+        menuVisible = false;
+      }
+    };
+  
+    headerHamburger.addEventListener('click', () => {
+      if (menuVisible) {
+        slideUp(menu, 10);
+        menuVisible = false;
+      } else {
+        slideDown(menu, 'flex', 10);
+        menuVisible = true;
+      }
+    });
+  }
 
   const MIN_INTERVAL_DURATION = 10; 
 

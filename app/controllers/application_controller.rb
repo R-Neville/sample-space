@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   def initialize
     super
 
@@ -20,5 +22,11 @@ class ApplicationController < ActionController::Base
         url: Rails.application.routes.url_helpers.contact_path
       }
     ]
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :last_name])
   end
 end

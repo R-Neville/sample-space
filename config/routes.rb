@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'pages#home'
   get '/browse', to: 'pages#browse'
   get '/creators', to: 'pages#creators'

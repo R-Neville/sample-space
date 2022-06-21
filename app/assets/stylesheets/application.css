@@ -260,8 +260,8 @@ footer .logo {
 
 footer h1 {
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
   color: var(--footer-fg);
 }
 

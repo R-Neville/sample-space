@@ -159,6 +159,7 @@ header .user-menu {
   align-items: center;
   position: relative;
   height: 35px;
+  cursor: pointer;
 }
 
 header .user-menu .icon {
@@ -185,10 +186,6 @@ header .user-menu .dropdown a {
 
 .user-menu .dropdown a:hover {
   background-color: var(--dropdown-bg-hover);
-}
-
-header .user-menu:hover .dropdown {
-  display: flex;
 }
 
 header .hamburger {

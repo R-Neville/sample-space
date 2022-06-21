@@ -18,6 +18,7 @@
 :root {
   --header-bg: #374548;
   --header-fg: #dbe2e3;
+  --dropdown-bg-hover: #b7c4c8;
   --footer-bg: #dbe2e3;
   --footer-fg: #374548;
   --devise-wrapper-bg: #374548;
@@ -171,6 +172,7 @@ header .user-menu .dropdown {
   top: 100%;
   right: 0;
   width: 200px;
+  box-shadow: 4px 4px 4px var(--header-bg);
   background-color: var(--header-fg);
 }
 
@@ -179,6 +181,10 @@ header .user-menu .dropdown a {
   padding: 0.5em;
   text-decoration: none;
   color: var(--header-bg);
+}
+
+.user-menu .dropdown a:hover {
+  background-color: var(--dropdown-bg-hover);
 }
 
 header .user-menu:hover .dropdown {

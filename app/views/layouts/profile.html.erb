@@ -17,7 +17,15 @@
       <%= render 'shared/flash' %>
       <section class="profile">
         <div class="info">
-          <div class="image"></div>
+          <% if current_user.avatar.present? %>
+          <div class="avatar">
+            <%= image_tag current_user.avatar %>
+          </div>
+          <% else %>
+          <div class="avatar">
+            <%= image_tag 'user-icon.svg' %>
+          </div>
+          <% end %>
           <div class="names">
             <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
             <h3 class="username">@<%= current_user.username %>

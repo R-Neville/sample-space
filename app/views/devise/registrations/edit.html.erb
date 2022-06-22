@@ -23,6 +23,11 @@
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, "avatar" %>
+    <%= f.file_field :avatar, class: 'avatar' %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

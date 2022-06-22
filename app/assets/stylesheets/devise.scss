@@ -61,6 +61,23 @@ $devise_content_bg: #dbe2e3;
         margin-bottom: 1em;
         font-size: 1em;
         color: $devise_wrapper_bg;
+
+        &[type=file] {
+          border: 1px solid $devise_wrapper_bg;
+          background-color: #fff;
+          border-radius: 2px;
+        }
+
+        &::file-selector-button {
+          padding: 0.5em 1em;
+          height: 35px;
+          border: none;
+          background-color: $devise_wrapper_bg;
+          font-size: 1em;
+          text-decoration: none;
+          color: $devise_content_bg;
+          cursor: pointer;
+        }
       }
     }
 

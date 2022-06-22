@@ -1,12 +1,10 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation">
-    <% resource.errors.full_messages.each do |message| %>
-      <div class="flash alert">
-        <%= message %>
-        <button type="button">
-          <%= image_tag 'close-alert.svg' %>
-        </button>
-      </div>
-    <% end %>
-  </div>
+  <% resource.errors.full_messages.each do |message| %>
+    <div class="flash alert">
+      <%= message %>
+      <button type="button">
+        <%= image_tag 'close-alert.svg' %>
+      </button>
+    </div>
+  <% end %>
 <% end %>

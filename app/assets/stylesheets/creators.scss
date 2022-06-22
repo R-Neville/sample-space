@@ -38,6 +38,17 @@ $card-fg: #dbe2e3;
         border-bottom: 1px solid $card-fg;
         color: $card-fg;
       }
+
+      .creator-link {
+        width: 100%;
+        height: 35px;
+        padding: 0.5em 1em;
+        background-color: $card-fg;
+        font-size: 1em;
+        text-align: center;
+        text-decoration: none;
+        color: $card-bg;
+      }
     }
   }
 }

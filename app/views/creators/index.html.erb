@@ -5,7 +5,7 @@
       <div class="card">
         <%= image_tag creator.avatar, class: 'avatar' %>
         <h3 class="username">@<%= creator.username %></h3>
-        <%= link_to "view profile", creator_path(creator.username) %>
+        <%= link_to "view profile", creator_path(creator.username), class: 'creator-link' %>
       </div>
     <% end %>
   </div>

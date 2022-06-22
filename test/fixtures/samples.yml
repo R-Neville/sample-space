@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creator: one
+  name: MyString
+  description: MyText
+  length: 1
+  sample_rate: 1
+  bit_depth: 1
+  likes: 1
+  downloads: 1
+  price: 1.5
+
+two:
+  creator: two
+  name: MyString
+  description: MyText
+  length: 1
+  sample_rate: 1
+  bit_depth: 1
+  likes: 1
+  downloads: 1
+  price: 1.5

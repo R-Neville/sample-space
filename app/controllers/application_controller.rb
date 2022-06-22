@@ -4,22 +4,24 @@ class ApplicationController < ActionController::Base
   def initialize
     super
 
+    url_helpers = Rails.application.routes.url_helpers
+
     @nav_links = [
       {
         text: 'browse',
-        url: Rails.application.routes.url_helpers.browse_path
+        url: url_helpers.browse_path
       },
       {
         text: 'creators',
-        url: Rails.application.routes.url_helpers.creators_path
+        url: url_helpers.creators_path
       },
       {
         text: 'about',
-        url: Rails.application.routes.url_helpers.about_path
+        url: url_helpers.about_path
       },
       {
         text: 'contact',
-        url: Rails.application.routes.url_helpers.contact_path
+        url: url_helpers.contact_path
       }
     ]
   end

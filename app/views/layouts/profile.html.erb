@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleSpace</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/header' %>
+    <%= render 'shared/menu' %>
+    <main>
+      <%= render 'shared/flash' %>
+      <section class="profile">
+        <div class="info">
+          <div class="image"></div>
+          <div class="names">
+            <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
+            <h3 class="username">@<%= current_user.username %>
+          </div>
+          <a href="" class="settings">settings</a>
+        </div>
+        <div class="dashboard">
+          <%= render 'profile/shared/nav' %>
+          <div class="content">
+            <%= yield %>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%= render 'shared/footer' %>
+  </body>
+</html>

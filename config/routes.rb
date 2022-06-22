@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # Profile controller
   get '/profile', to: 'profile#index'
+  get '/profile/uploads', to: 'profile#uploads'
   get '/profile/downloads', to: 'profile#downloads'
   get '/profile/likes', to: 'profile#likes'
   get '/profile/wishlist', to: 'profile#wishlist'

@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :add_uploads_link
 
   def initialize
     super
@@ -29,6 +29,9 @@ class ProfileController < ApplicationController
   def index
   end
 
+  def uploads
+  end
+
   def downloads
   end
 
@@ -36,5 +39,16 @@ class ProfileController < ApplicationController
   end
 
   def wishlist
+  end
+
+  protected
+
+  def add_uploads_link
+    if current_user.is_creator
+      @links.insert(1, {
+        text: 'uploads',
+        url: Rails.application.routes.url_helpers.profile_uploads_path
+      })
+    end
   end
 end

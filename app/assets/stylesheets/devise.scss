@@ -4,13 +4,13 @@ $devise_wrapper_bg: #374548;
 $devise_content_bg: #dbe2e3;
 
 .devise-wrapper {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em;
   width: 100%;
-  min-height: 100%;
   background-color: $devise_wrapper_bg;
 
   .logo-wrapper {

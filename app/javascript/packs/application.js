@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "./app-menu"
 import "./user-menu"
+import "./flash"
 
 Rails.start()
 Turbolinks.start()

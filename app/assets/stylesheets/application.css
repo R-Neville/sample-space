@@ -280,26 +280,6 @@ header .hamburger .line {
   color: var(--header-bg);
 }
 
-.alert {
-  padding: 1em;
-  border: 1px solid #C0392B;
-  border-radius: 3px;
-  margin-bottom: 1em;
-  background-color: #FADBD8;
-  color: #C0392B;
-  text-align: center;
-}
-
-.notice {
-  padding: 1em;
-  border: 1px solid #16A085;
-  border-radius: 3px;
-  margin-bottom: 1em;
-  background-color: #D5F5E3;
-  color: #16A085;
-  text-align: center;
-}
-
 main {
   flex-grow: 1;
   padding: 1em;

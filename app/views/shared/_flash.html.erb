@@ -1,7 +1,17 @@
 <% if notice %>
-  <div class="notice"><%= notice %></div>
+  <div class="flash notice">
+    <%= notice %>
+    <button type="button">
+      <%= image_tag 'close-notice.svg' %>
+    </button>
+  </div>
 <% end %>
 
 <% if alert %>
-  <div class="alert"><%= alert %></div>
+  <div class="flash alert">
+    <%= alert %>
+    <button type="button">
+      <%= image_tag 'close-alert.svg' %>
+    </button>
+  </div>
 <% end %>

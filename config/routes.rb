@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get '/profile/likes', to: 'profile#likes'
   get '/profile/wishlist', to: 'profile#wishlist'
 
+  # Samples controller
+  get '/upload', to: 'samples#new'
+
   # Creators controller
   get '/creators', to: 'creators#index'
   get '/creators/:username', to: 'creators#view', as: 'creator'

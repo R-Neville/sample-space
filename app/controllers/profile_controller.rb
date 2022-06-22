@@ -30,6 +30,7 @@ class ProfileController < ApplicationController
   end
 
   def uploads
+    @samples = current_user.samples.all
   end
 
   def downloads

@@ -78,7 +78,6 @@ $dashboard_fg: #dbe2e3;
 
     nav {
       display: flex;
-      border-bottom: 1px solid $dashboard_fg;
       background-color: $dashboard_fg;
 
       a {
@@ -105,6 +104,25 @@ $dashboard_fg: #dbe2e3;
 
       * {
         color: $dashboard_fg;
+      }
+
+      .no-samples {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+          text-align: center;
+        }
+  
+        a {
+          padding: 0.5em 1em;
+          margin-right: auto;
+          margin-left: auto;
+          background-color: $dashboard_fg;
+          text-decoration: none;
+          color: $dashboard_bg;
+        }
       }
     }
   }

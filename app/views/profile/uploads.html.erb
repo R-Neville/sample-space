@@ -1,1 +1,8 @@
-<p>uploads</p>
+<% if @samples.length == 0 %>
+  <div class="no-samples">
+    <p>Nothing to show yet...</p>
+    <%= link_to 'upload samples', upload_path %>
+  </div>
+<% else %>
+  
+<% end %>

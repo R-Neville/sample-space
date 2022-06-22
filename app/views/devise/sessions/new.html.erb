@@ -4,14 +4,17 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email' %>
+    <%= f.label :email, "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'password' %>
+    <%= f.label :password, "password" %>
+    <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
+    <%= link_to "back", :back %>
     <%= f.submit "sign in", class: 'sign-in' %>
   </div>
 <% end %>

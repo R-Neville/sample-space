@@ -1,0 +1,104 @@
+/* Devise layout styles: */
+
+$devise_wrapper_bg: #374548;
+$devise_content_bg: #dbe2e3;
+
+.devise-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  min-height: 100%;
+  background-color: $devise_wrapper_bg;
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      width: 150px;
+    }
+
+    h1 {
+      color: $devise_content_bg;
+    }
+  }
+
+  .devise-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 3px;
+    background-color: $devise_content_bg;
+
+    h2,
+    h3 {
+      text-align: center;
+      color: $devise_wrapper_bg;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        color: $devise_wrapper_bg;
+      }
+
+      input {
+        width: 100%;
+        height: 35px;
+        margin-bottom: 1em;
+        font-size: 1em;
+        color: $devise_wrapper_bg;
+      }
+    }
+
+    p {
+      text-align: center;
+      color: $devise_wrapper_bg;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+    
+      input,
+      a {
+        padding: 0.5em 1em;
+        height: 35px;
+        border: none;
+        background-color: $devise_wrapper_bg;
+        font-size: 1em;
+        text-decoration: none;
+        color: $devise_content_bg;
+        cursor: pointer;
+      }
+    }
+
+    > a {
+      margin: 1em auto;
+    }
+
+    .delete-account {
+      padding: 0.5em 1em;
+      height: 35px;
+      border: none;
+      background-color: #C0392B;
+      font-size: 1em;
+      text-decoration: none;
+      color: $devise_content_bg;
+      cursor: pointer;
+    }
+  }
+}

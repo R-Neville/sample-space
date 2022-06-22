@@ -4,30 +4,37 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email' %>
+    <%= f.label :email, "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :username, placeholder: 'username' %>
+    <%= f.label :username, "username" %>
+    <%= f.text_field :username %>
   </div>
 
   <div class="field">
-    <%= f.text_field :first_name, placeholder: 'first name' %>
+    <%= f.label :first_name, "first name" %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.text_field :last_name, placeholder: 'last name' %>
+    <%= f.label :last_name, "last name" %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'password' %>
+    <%= f.label :password, "password" %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'confirm password' %>
+    <%= f.label :password_confirmation, "confirm password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
+    <%= link_to "back", :back %>
     <%= f.submit "sign up", class: 'sign-up' %>
   </div>
 <% end %>

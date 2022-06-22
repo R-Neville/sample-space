@@ -159,6 +159,7 @@ header .user-menu {
   align-items: center;
   position: relative;
   height: 35px;
+  margin: 0 0.5em;
   cursor: pointer;
 }
 
@@ -173,7 +174,6 @@ header .user-menu .dropdown {
   top: 100%;
   right: 0;
   width: 200px;
-  box-shadow: 4px 4px 4px var(--header-bg);
   background-color: var(--header-fg);
 }
 

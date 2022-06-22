@@ -58,6 +58,7 @@ $dashboard_fg: #dbe2e3;
     .settings {
       padding: 0.5em 1em;
       background-color: $info_fg;
+      box-shadow: 4px 4px 4px $info_highlight;
       text-decoration: none;
       color: $info_highlight;
     }

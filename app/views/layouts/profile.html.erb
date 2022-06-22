@@ -22,7 +22,7 @@
             <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
             <h3 class="username">@<%= current_user.username %>
           </div>
-          <a href="" class="settings">settings</a>
+          <%= link_to 'edit', edit_user_registration_path, class: 'settings' %>
         </div>
         <div class="dashboard">
           <%= render 'profile/shared/nav' %>

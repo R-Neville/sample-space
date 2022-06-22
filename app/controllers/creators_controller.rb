@@ -5,6 +5,5 @@ class CreatorsController < ApplicationController
 
   def view
     @creator = User.where(username: params[:username]).first
-    puts @creator
   end
 end

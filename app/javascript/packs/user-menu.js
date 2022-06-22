@@ -14,4 +14,11 @@ document.addEventListener('turbolinks:load', function() {
       }
     });
   }
+
+  document.addEventListener('click', (event) => {
+    if (menuVisible && !event.target.closest('header .user-menu')) {
+      dropdown.style.display = 'none';
+      menuVisible = false;
+    }
+  });
 });

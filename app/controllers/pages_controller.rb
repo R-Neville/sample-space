@@ -7,9 +7,6 @@ class PagesController < ApplicationController
   def browse
   end
 
-  def creators
-  end
-
   def about
   end
 

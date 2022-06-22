@@ -1,0 +1,43 @@
+// Place all the styles related to the creators controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$card-bg: #374548;
+$card-fg: #dbe2e3;
+
+.creators {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 850px;
+  margin: auto;
+
+  h1 {
+    color: #374548;
+    font-size: 5em;
+  }
+
+  .index {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      background-color: $card-bg;
+      box-shadow: 4px 4px 4px $card-fg;
+
+      .avatar {
+        width: 200px;
+        height: 200px;
+      }
+
+      .username {
+        border-bottom: 1px solid $card-fg;
+        color: $card-fg;
+      }
+    }
+  }
+}

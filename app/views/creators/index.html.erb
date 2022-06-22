@@ -1,0 +1,12 @@
+<section class="creators">
+  <h1>Creators</h1>
+  <div class="index">
+    <% @creators.each do |creator| %>
+      <div class="card">
+        <%= image_tag creator.avatar, class: 'avatar' %>
+        <h3 class="username">@<%= creator.username %></h3>
+        <%= link_to "view profile", creator_path(creator.username) %>
+      </div>
+    <% end %>
+  </div>
+</section>

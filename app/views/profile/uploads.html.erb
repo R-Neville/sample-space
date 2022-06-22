@@ -4,5 +4,7 @@
     <%= link_to 'upload samples', upload_path %>
   </div>
 <% else %>
-  
+  <% @samples.each do |sample| %>
+    <%= link_to sample.name, sample.audio_file %>
+  <% end %>
 <% end %>

@@ -23,14 +23,12 @@
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
+  <p>Ignore the following field to keep your current avatar:</p>
+
   <div class="field">
-    <%= f.label :avatar, "avatar" %>
+    <%= f.label :avatar, "new avatar" %>
     <%= f.file_field :avatar, class: 'avatar' %>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
 
   <p>Leave the following two fields blank to keep your current password:</p>
 
@@ -42,6 +40,11 @@
   <div class="field">
     <%= f.label :password_confirmation, "confirm password" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field creator">
+    <%= f.label :is_creator, "I want to be a creator" %>
+    <%= f.check_box :is_creator, autocomplete: "is_creator" %>
   </div>
 
   <p>Enter your current password to confirm changes:</p>

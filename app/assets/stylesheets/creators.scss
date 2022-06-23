@@ -25,6 +25,7 @@
       display: flex;
       flex-direction: column;
       padding: 1em;
+      margin: 0.5em;
       background-color: $dark;
       box-shadow: 4px 4px 4px $light;
 
@@ -136,8 +137,6 @@
         color: $dark;
       }
     }
-
-    
 
     .card {
       display: flex;

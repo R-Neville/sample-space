@@ -3,9 +3,13 @@ include WaveFile
 
 class SamplesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_sample, only: [:edit, :update, :show, :destroy]
+  before_action :set_sample, only: [:edit, :update, :show, :destroy, :download]
 
   def show
+  end
+
+  def download
+    send_data @sample.audio_file, type: 'audio/x-wav', filename: "#{@sample.name}.wav"
   end
 
   def new
@@ -45,7 +49,7 @@ class SamplesController < ApplicationController
   private
 
   def set_sample
-    @sample = current_user.samples.find(params[:id])
+    @sample = Sample.find(params[:id])
   end
 
   def sample_params

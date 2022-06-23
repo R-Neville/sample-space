@@ -85,7 +85,7 @@
     }
   }
 
-  .name-edit {
+  .name-actions {
     display: flex;
     align-items: center;
 
@@ -99,6 +99,10 @@
       text-decoration: none;
       color: $light;
       box-shadow: 4px 4px 4px $light;
+
+      &.download {
+        margin-right: 0.5em;
+      }
     }
   }
 
@@ -178,6 +182,22 @@
         background-color: #C0392B;
         text-decoration: none;
         color: #FADBD8;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .samples-wrapper {
+    .name-actions {
+      flex-direction: column;
+
+      h1 {
+        margin: 0 !important;
+      }
+
+      a {
+        margin: 10px;
       }
     }
   }

@@ -1,8 +1,8 @@
 <section class="creator-wrapper">
   <div class="info">
-    <% if current_user.avatar.present? %>
+    <% if @creator.avatar.present? %>
     <div class="avatar">
-      <%= image_tag current_user.avatar %>
+      <%= image_tag @creator.avatar %>
     </div>
     <% else %>
     <div class="avatar">
@@ -10,8 +10,8 @@
     </div>
     <% end %>
     <div class="names">
-      <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
-      <h3 class="username">@<%= current_user.username %>
+      <h1 class="full-name"><%= @creator.first_name %> <%= @creator.last_name %></h1>
+      <h3 class="username">@<%= @creator.username %>
     </div>
     <div class="stats">
       <span><%= pluralize(@samples.count, 'sample') %></span>

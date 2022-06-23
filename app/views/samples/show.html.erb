@@ -1,7 +1,12 @@
 <div class="samples-wrapper">
-  <div class="name-edit">
+  <div class="name-actions">
     <h1><%= @sample.name %></h1>
-    <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+    <% if current_user %>
+      <%= link_to 'download', download_path(@sample) %>
+    <% end %>
+    <% if current_user && current_user.id == @sample.user_id %>
+      <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+    <% end %>
   </div>
   <audio class="preview" controls controlsList="nodownload" preload="metadata">
     <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">
@@ -29,10 +34,12 @@
       <div class="value"><%= @sample.sample_rate %>Hz</div>
     </div>
   </div>
-  <div class="danger-zone">
-    <h2>DANGER ZONE</h2>
-    <div class="actions">
-      <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
+  <% if current_user && current_user.id == @sample.user_id %>
+    <div class="danger-zone">
+      <h2>DANGER ZONE</h2>
+      <div class="actions">
+        <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

@@ -1,0 +1,23 @@
+<div class="samples-wrapper">
+
+  <h1>Upload Sample</h1>
+
+  <%= render 'samples/shared/error_messages' %>
+
+  <%= form_with url: edit_sample_path, model: @sample do |form| %>
+    <div class="field">
+      <%= form.label :name, "name" %>
+      <%= form.text_field :name, autocomplete: "name"  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description, "description" %>
+      <%= form.text_area :description, autocomplete: "description" %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit 'update' %>
+    </div>
+  <% end %>
+
+</div>

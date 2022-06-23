@@ -4,7 +4,7 @@
 
   <%= render 'samples/shared/error_messages' %>
 
-  <%= form_with model: @article do |form| %>
+  <%= form_with url: upload_path, model: @sample do |form| %>
     <div class="field">
       <%= form.label :name, "name" %>
       <%= form.text_field :name %>

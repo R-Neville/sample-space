@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/upload', to: 'samples#create'
   get '/samples/:id', to: 'samples#show', as: 'show_sample'
   get '/samples/:id/edit', to: 'samples#edit', as: 'edit_sample'
+  patch '/samples/:id/edit', to: 'samples#update'
   delete '/samples/:id', to: 'samples#destroy', as: 'delete_sample'
 
   # Creators controller

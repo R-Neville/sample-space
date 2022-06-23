@@ -16,8 +16,8 @@ class SamplesController < ApplicationController
   end
 
   def create
-    if params[:audio_file]
-      add_metadata_to_params(params[:audio_file].tempfile)
+    if params[:sample][:audio_file]
+      add_metadata_to_params
     end
     
     @sample = current_user.samples.create(sample_params)
@@ -49,22 +49,22 @@ class SamplesController < ApplicationController
   end
 
   def sample_params
-    params.permit(:name, :description, :duration, :sample_rate, :bit_depth,
+    params.require(:sample).permit(:name, :description, :duration, :sample_rate, :bit_depth,
                                   :likes, :downloads, :price, :audio_file)
   end
 
-  def add_metadata_to_params(filename)
-    reader = Reader.new(filename)
+  def add_metadata_to_params
+    reader = Reader.new(params[:sample][:audio_file].tempfile)
     ms_str = reader.total_duration.milliseconds.to_s
     s_str = reader.total_duration.seconds.to_s
     m_str = reader.total_duration.minutes.to_s
     h_str = reader.total_duration.hours.to_s
     duration = "#{h_str}:#{m_str}:#{s_str}.#{ms_str}"
-    params[:duration] = duration
-    params[:bit_depth] = reader.native_format.bits_per_sample
-    params[:sample_rate] = reader.native_format.sample_rate
-    params[:likes] = 0
-    params[:downloads] = 0
-    params[:price] = 0
+    params[:sample][:duration] = duration
+    params[:sample][:bit_depth] = reader.native_format.bits_per_sample
+    params[:sample][:sample_rate] = reader.native_format.sample_rate
+    params[:sample][:likes] = 0
+    params[:sample][:downloads] = 0
+    params[:sample][:price] = 0
   end
 end

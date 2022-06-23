@@ -1,5 +1,6 @@
 class ProfileController < ApplicationController
   before_action :authenticate_user!, :add_uploads_link
+  before_action :redirect_if_not_creator, only: [:uploads]
 
   def initialize
     super
@@ -51,5 +52,10 @@ class ProfileController < ApplicationController
         url: Rails.application.routes.url_helpers.profile_uploads_path
       })
     end
+  end
+
+  def redirect_if_not_creator
+    message = 'You need to switch to creator mode to upload samples.'
+    redirect_to profile_path, alert: message unless current_user.is_creator
   end
 end

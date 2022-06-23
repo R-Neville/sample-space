@@ -1,12 +1,14 @@
 <div class="samples-wrapper">
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
-    <% if current_user %>
-      <%= link_to 'download', rails_blob_url(@sample.audio_file), class: 'download' %>
-    <% end %>
-    <% if current_user && current_user.id == @sample.user_id %>
-      <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
-    <% end %>
+    <div class="actions">
+      <% if current_user %>
+        <%= link_to 'download', rails_blob_url(@sample.audio_file), class: 'download' %>
+      <% end %>
+      <% if current_user && current_user.id == @sample.user_id %>
+        <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+      <% end %>
+    </div>
   </div>
   <audio class="preview" controls controlsList="nodownload" preload="metadata">
     <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">

@@ -60,3 +60,5 @@ gem "devise", "~> 4.8"
 gem "file_validators", "~> 3.0"
 
 gem "wavefile", "~> 1.1"
+
+gem "acts-as-taggable-on", "~> 9.0"

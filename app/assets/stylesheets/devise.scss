@@ -1,7 +1,6 @@
 /* Devise layout styles: */
 
-$devise_wrapper_bg: #374548;
-$devise_content_bg: #dbe2e3;
+@import 'variables';
 
 .devise-wrapper {
   flex-grow: 1;
@@ -11,7 +10,7 @@ $devise_content_bg: #dbe2e3;
   align-items: center;
   padding: 1em;
   width: 100%;
-  background-color: $devise_wrapper_bg;
+  background-color: $dark;
 
   .logo-wrapper {
     display: flex;
@@ -23,7 +22,7 @@ $devise_content_bg: #dbe2e3;
     }
 
     h1 {
-      color: $devise_content_bg;
+      color: $light;
     }
   }
 
@@ -34,12 +33,12 @@ $devise_content_bg: #dbe2e3;
     width: 100%;
     max-width: 500px;
     border-radius: 3px;
-    background-color: $devise_content_bg;
+    background-color: $light;
 
     h2,
     h3 {
       text-align: center;
-      color: $devise_wrapper_bg;
+      color: $dark;
     }
 
     form {
@@ -66,22 +65,22 @@ $devise_content_bg: #dbe2e3;
       label {
         margin-bottom: 0.5em;
         font-weight: bold;
-        color: $devise_wrapper_bg;
+        color: $dark;
       }
 
       input {
         padding: 0 5px;
         width: 100%;
         height: 35px;
-        border: 1px solid $devise_wrapper_bg;
+        border: 1px solid $dark;
         border-radius: 2px;
         margin-bottom: 1em;
         font-size: 1em;
-        color: $devise_wrapper_bg;
+        color: $dark;
 
         &[type=file] {
           padding: 0;
-          border: 1px solid $devise_wrapper_bg;
+          border: 1px solid $dark;
           background-color: #fff;
           border-radius: 2px;
         }
@@ -97,10 +96,10 @@ $devise_content_bg: #dbe2e3;
           padding: 0.5em 1em;
           height: 35px;
           border: none;
-          background-color: $devise_wrapper_bg;
+          background-color: $dark;
           font-size: 1em;
           text-decoration: none;
-          color: $devise_content_bg;
+          color: $light;
           cursor: pointer;
         }
       }
@@ -108,7 +107,7 @@ $devise_content_bg: #dbe2e3;
 
     p {
       text-align: center;
-      color: $devise_wrapper_bg;
+      color: $dark;
     }
 
     .actions {
@@ -120,10 +119,10 @@ $devise_content_bg: #dbe2e3;
         padding: 0.5em 1em;
         height: 35px;
         border: none;
-        background-color: $devise_wrapper_bg;
+        background-color: $dark;
         font-size: 1em;
         text-decoration: none;
-        color: $devise_content_bg;
+        color: $light;
         cursor: pointer;
       }
     }
@@ -139,7 +138,7 @@ $devise_content_bg: #dbe2e3;
       background-color: #C0392B;
       font-size: 1em;
       text-decoration: none;
-      color: $devise_content_bg;
+      color: $light;
       cursor: pointer;
     }
   }

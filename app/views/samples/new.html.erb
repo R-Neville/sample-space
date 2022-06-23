@@ -1,24 +1,28 @@
-<h1>Upload Sample</h1>
+<div class="samples-wrapper">
 
-<%= render 'samples/shared/error_messages' %>
+  <h1>Upload Sample</h1>
 
-<%= form_with model: @article do |form| %>
-  <div class="field">
-    <%= form.label :name, "name" %><br>
-    <%= form.text_field :name %>
-  </div>
+  <%= render 'samples/shared/error_messages' %>
 
-  <div class="field">
-    <%= form.label :description, "description" %>
-    <%= form.text_area :desctription %>
-  </div>
+  <%= form_with model: @article do |form| %>
+    <div class="field">
+      <%= form.label :name, "name" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :audio_file, 'file' %>
-    <%= form.file_field :audio_file %>
-  </div>
-  
-  <div class="actions">
-    <%= form.submit 'upload' %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.label :description, "description" %>
+      <%= form.text_area :desctription %>
+    </div>
+
+    <div class="field file">
+      <%= form.label :audio_file, 'audio file' %>
+      <%= form.file_field :audio_file %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit 'upload' %>
+    </div>
+  <% end %>
+
+</div>

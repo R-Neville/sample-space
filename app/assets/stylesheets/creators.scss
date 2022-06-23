@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-$card-bg: #374548;
-$card-fg: #dbe2e3;
+@import 'variables';
 
 .creators {
   display: flex;
@@ -14,7 +13,7 @@ $card-fg: #dbe2e3;
   margin: auto;
 
   h1 {
-    color: #374548;
+    color: $dark;
     font-size: 5em;
   }
 
@@ -26,8 +25,8 @@ $card-fg: #dbe2e3;
       display: flex;
       flex-direction: column;
       padding: 1em;
-      background-color: $card-bg;
-      box-shadow: 4px 4px 4px $card-fg;
+      background-color: $dark;
+      box-shadow: 4px 4px 4px $light;
 
       .avatar {
         width: 200px;
@@ -35,19 +34,19 @@ $card-fg: #dbe2e3;
       }
 
       .username {
-        border-bottom: 1px solid $card-fg;
-        color: $card-fg;
+        border-bottom: 1px solid $light;
+        color: $light;
       }
 
       .creator-link {
         width: 100%;
         height: 35px;
         padding: 0.5em 1em;
-        background-color: $card-fg;
+        background-color: $light;
         font-size: 1em;
         text-align: center;
         text-decoration: none;
-        color: $card-bg;
+        color: $dark;
       }
     }
   }

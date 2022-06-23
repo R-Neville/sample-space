@@ -1,3 +1,75 @@
 // Place all the styles related to the samples controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.samples-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  margin: auto;
+
+  h1 {
+    color: $dark;
+  }
+
+  form {
+    padding: 1em;
+    background-color: $dark;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+
+      label {
+        color: $light;
+      }
+
+      input {
+        height: 35px;
+
+        &[type=file] {
+          padding: 0;
+          border: 1px solid $light;
+          background-color: #fff;
+          border-radius: 2px;
+        }
+
+        &::file-selector-button {
+          padding: 0.5em 1em;
+          height: 35px;
+          border: none;
+          background-color: $light;
+          font-size: 1em;
+          text-decoration: none;
+          color: $dark;
+          cursor: pointer;
+        }
+      }
+
+      textarea {
+        min-height: 70px;
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+
+      input {
+        padding: 0.5em 1em;
+        border: none;
+        background-color: $light;
+        font-size: 1em;
+        color: $dark;
+        cursor: pointer;
+      }
+    }
+  }
+}

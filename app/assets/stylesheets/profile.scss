@@ -59,12 +59,20 @@ $dashboard_fg: #dbe2e3;
       }
     }
 
-    .settings {
-      padding: 0.5em 1em;
-      background-color: $info_fg;
-      box-shadow: 4px 4px 4px $info_highlight;
-      text-decoration: none;
-      color: $info_highlight;
+    .actions {
+      display: flex;
+
+      a {
+        padding: 0.5em 1em;
+        background-color: $info_fg;
+        box-shadow: 4px 4px 4px $info_highlight;
+        text-decoration: none;
+        color: $info_highlight;
+      
+        &.upload {
+          margin-right: 0.5em;
+        }
+      }
     }
   }
 
@@ -174,6 +182,30 @@ $dashboard_fg: #dbe2e3;
             display: none;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .profile {
+    .info {
+      flex-direction: column;
+      height: auto;
+
+      .names {
+        margin: 0 !important;
+     
+        * {
+          text-align: center;
+        }
+      }
+    }
+
+    .dashboard {
+      nav {
+        flex-direction: column;
+        border-bottom: 1px solid $dashboard_fg;
       }
     }
   }

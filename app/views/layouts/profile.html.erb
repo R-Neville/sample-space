@@ -30,7 +30,12 @@
             <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
             <h3 class="username">@<%= current_user.username %>
           </div>
-          <%= link_to 'edit', edit_user_registration_path, class: 'settings' %>
+          <div class="actions">
+            <% if current_user.is_creator %>
+              <%= link_to 'upload', upload_path, class: 'upload' %>
+            <% end %>
+            <%= link_to 'edit', edit_user_registration_path %>
+          </div>
         </div>
         <div class="dashboard">
           <%= render 'profile/shared/nav' %>

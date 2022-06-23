@@ -16,17 +16,10 @@ class SamplesController < ApplicationController
   end
 
   def create
-    filename = params[:audio_file].tempfile
-
-    audio_metadata = get_audio_metadata(filename)
-
-    params[:duration] = audio_metadata[:duration]
-    params[:bit_depth] = audio_metadata[:bit_depth]
-    params[:sample_rate] = audio_metadata[:sample_rate]
-    params[:likes] = 0
-    params[:downloads] = 0
-    params[:price] = 0
-
+    if params[:audio_file]
+      add_metadata_to_params(params[:audio_file].tempfile)
+    end
+    
     @sample = current_user.samples.create(sample_params)
 
     if @sample.save
@@ -60,11 +53,16 @@ class SamplesController < ApplicationController
                                   :likes, :downloads, :price, :audio_file)
   end
 
-  def get_audio_metadata(filename)
+  def add_metadata_to_params(filename)
     reader = Reader.new(filename)
     bit_depth = reader.native_format.bits_per_sample
     sample_rate = reader.native_format.sample_rate
     duration = reader.total_duration.milliseconds
-    { bit_depth: bit_depth, sample_rate: sample_rate, duration: duration }
+    params[:duration] = duration
+    params[:bit_depth] = bit_depth
+    params[:sample_rate] = sample_rate
+    params[:likes] = 0
+    params[:downloads] = 0
+    params[:price] = 0
   end
 end

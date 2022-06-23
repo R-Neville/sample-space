@@ -5,5 +5,6 @@ class CreatorsController < ApplicationController
 
   def view
     @creator = User.where(username: params[:username]).first
+    @samples = @creator.samples.where(is_public: true)
   end
 end

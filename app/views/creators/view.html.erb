@@ -1,3 +1,36 @@
-<section class="profile">
-  <%= @creator.username %>
+<section class="creator-wrapper">
+  <div class="info">
+    <% if current_user.avatar.present? %>
+    <div class="avatar">
+      <%= image_tag current_user.avatar %>
+    </div>
+    <% else %>
+    <div class="avatar">
+      <%= image_tag 'user-icon.svg' %>
+    </div>
+    <% end %>
+    <div class="names">
+      <h1 class="full-name"><%= current_user.first_name %> <%= current_user.last_name %></h1>
+      <h3 class="username">@<%= current_user.username %>
+    </div>
+    <div class="stats">
+      <span><%= pluralize(@samples.count, 'sample') %></span>
+    </div>
+  </div>
+  <div class="content">
+    <% @samples.each do |sample| %>
+      <div class="card">
+        <div class="info-details">
+          <div>
+            <h3 class="name"><%= sample.name %></h3>
+          </div>
+          <%= link_to 'details', show_sample_path(sample), class: 'details' %>
+        </div>
+        <audio class="preview" controls controlsList="nodownload" preload="metadata">
+          <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
+        </audio>
+        <span class="duration"><%= sample.duration %></span>
+      </div>
+    <% end %>
+  </div>
 </section>

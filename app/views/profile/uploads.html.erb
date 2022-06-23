@@ -1,10 +1,23 @@
 <% if @samples.length == 0 %>
-  <div class="no-samples">
+  <div class="nothing-to-show">
     <p>Nothing to show yet...</p>
     <%= link_to 'upload samples', upload_path %>
   </div>
 <% else %>
-  <% @samples.each do |sample| %>
-    <%= link_to sample.name, sample.audio_file %>
-  <% end %>
+  <div class="uploads-wrapper">
+    <% @samples.each do |sample| %>
+      <div class="card">
+        <div class="name-info">
+          <h3 class="name"><%= sample.name %></h3>
+          <button class="info-button">
+            info
+          </button>
+        </div>
+        <audio class="preview" controls controlsList="nodownload" preload="metadata">
+          <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
+        </audio>
+      </div>
+    <% end %>
+  </div>
 <% end %>
+

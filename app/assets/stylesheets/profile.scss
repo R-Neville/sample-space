@@ -144,7 +144,7 @@
           margin-bottom: 1em;
           background-color: $light;
 
-          .name-info {
+          .name-details {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -153,7 +153,13 @@
               color: $dark;
             }
 
-            .info-button {
+            .duration {
+              margin-left: 1em;
+              margin-right: auto;
+              color: $dark;
+            }
+
+            .details {
               padding: 0.5em;
               border: 1px solid $dark;
               background-color: $light;
@@ -161,7 +167,7 @@
               transition: background-color 0.4s ease, color 0.4s ease;
             }
 
-            .info-button:hover {
+            .details:hover {
               background-color: $dark;
               color: $light;
             }
@@ -204,6 +210,19 @@
       nav {
         flex-direction: column;
         border-bottom: 1px solid $light;
+      }
+
+      .uploads-wrapper {
+        .card {
+          .name-info {
+            flex-direction: column;
+
+            .duration {
+              margin: 0 !important;
+              margin-bottom: 1em !important;
+            }
+          }
+        }
       }
     }
   }

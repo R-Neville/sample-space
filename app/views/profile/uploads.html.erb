@@ -7,10 +7,11 @@
   <div class="uploads-wrapper">
     <% @samples.each do |sample| %>
       <div class="card">
-        <div class="name-info">
+        <div class="name-details">
           <h3 class="name"><%= sample.name %></h3>
-          <button class="info-button">
-            info
+          <span class="duration"><%= sample.duration / 1000.00 %>seconds</span>
+          <button class="details">
+            details
           </button>
         </div>
         <audio class="preview" controls controlsList="nodownload" preload="metadata">

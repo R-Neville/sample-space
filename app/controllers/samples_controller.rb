@@ -10,7 +10,6 @@ class SamplesController < ApplicationController
   end
 
   def download
-    send_data @sample.audio_file, type: 'audio/x-wav', filename: "#{@sample.name}.wav"
   end
 
   def new
@@ -71,5 +70,6 @@ class SamplesController < ApplicationController
     params[:sample][:likes] = 0
     params[:sample][:downloads] = 0
     params[:sample][:price] = 0
+    params[:sample][:audio_file].original_filename = "#{params[:sample][:name]}.wav"
   end
 end

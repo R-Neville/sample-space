@@ -2,7 +2,7 @@
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
     <% if current_user %>
-      <%= link_to 'download', download_path(@sample), class: 'download' %>
+      <%= link_to 'download', rails_blob_url(@sample.audio_file), class: 'download' %>
     <% end %>
     <% if current_user && current_user.id == @sample.user_id %>
       <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>

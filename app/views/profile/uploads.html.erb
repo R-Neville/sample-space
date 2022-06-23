@@ -9,7 +9,7 @@
       <div class="card">
         <div class="name-details">
           <h3 class="name"><%= sample.name %></h3>
-          <span class="duration"><%= sample.duration / 1000.00 %> sec</span>
+          <span class="duration"><%= sample.duration %></span>
           <%= link_to 'details', show_sample_path(sample), class: 'details' %>
         </div>
         <audio class="preview" controls controlsList="nodownload" preload="metadata">

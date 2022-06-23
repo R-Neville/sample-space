@@ -55,12 +55,14 @@ class SamplesController < ApplicationController
 
   def add_metadata_to_params(filename)
     reader = Reader.new(filename)
-    bit_depth = reader.native_format.bits_per_sample
-    sample_rate = reader.native_format.sample_rate
-    duration = reader.total_duration.milliseconds
+    ms_str = reader.total_duration.milliseconds.to_s
+    s_str = reader.total_duration.seconds.to_s
+    m_str = reader.total_duration.minutes.to_s
+    h_str = reader.total_duration.hours.to_s
+    duration = "#{h_str}:#{m_str}:#{s_str}.#{ms_str}"
     params[:duration] = duration
-    params[:bit_depth] = bit_depth
-    params[:sample_rate] = sample_rate
+    params[:bit_depth] = reader.native_format.bits_per_sample
+    params[:sample_rate] = reader.native_format.sample_rate
     params[:likes] = 0
     params[:downloads] = 0
     params[:price] = 0

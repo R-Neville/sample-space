@@ -2,10 +2,11 @@ require 'wavefile'
 include WaveFile
 
 class SamplesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :set_sample, only: [:edit, :update, :show, :destroy, :download]
 
   def show
+    @creator = User.find(@sample.user_id)
   end
 
   def download

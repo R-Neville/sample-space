@@ -2,7 +2,7 @@
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
     <% if current_user %>
-      <%= link_to 'download', download_path(@sample) %>
+      <%= link_to 'download', download_path(@sample), class: 'download' %>
     <% end %>
     <% if current_user && current_user.id == @sample.user_id %>
       <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
@@ -40,6 +40,12 @@
       <div class="actions">
         <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
       </div>
+    </div>
+  <% end %>
+  <% if !(current_user && current_user.id == @creator.id) %>
+    <div class="creator">
+      <%= image_tag @creator.avatar %>
+      <h3>Created by @<%= @creator.username %></h3>
     </div>
   <% end %>
 </div>

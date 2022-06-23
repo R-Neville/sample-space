@@ -85,6 +85,22 @@
     }
   }
 
+  .creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+    }
+
+    h3 {
+      color: $dark;
+    }
+  }
+
   .name-actions {
     display: flex;
     align-items: center;

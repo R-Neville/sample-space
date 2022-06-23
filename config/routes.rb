@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # Samples controller
   get '/upload', to: 'samples#new'
   post '/upload', to: 'samples#create'
+  get '/samples/:id', to: 'samples#show', as: 'show_sample'
+  get '/samples/:id/edit', to: 'samples#edit', as: 'edit_sample'
 
   # Creators controller
   get '/creators', to: 'creators#index'

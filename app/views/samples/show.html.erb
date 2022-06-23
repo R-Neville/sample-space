@@ -1,0 +1,32 @@
+<div class="samples-wrapper">
+  <div class="name-edit">
+    <h1><%= @sample.name %></h1>
+    <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+  </div>
+  <audio class="preview" controls controlsList="nodownload" preload="metadata">
+    <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">
+  </audio>
+  <div class="description">
+    <h2>Description</h2>
+    <% if @sample.description %>
+      <p><%= @sample.description %></p>
+    <% else %>
+      <p>No description...</p>
+    <% end %>
+  </div>
+  <div class="properties">
+    <h2>Properties</h2>
+    <div class="property">
+      <div class="name">duration</div>
+      <div class="value"><%= @sample.duration / 1000.0 %> sec</div>
+    </div>
+    <div class="property">
+      <div class="name">bit depth</div>
+      <div class="value"><%= @sample.bit_depth %></div>
+    </div>
+    <div class="property">
+      <div class="name">sample rate</div>
+      <div class="value"><%= @sample.sample_rate %>Hz</div>
+    </div>
+  </div>
+</div>

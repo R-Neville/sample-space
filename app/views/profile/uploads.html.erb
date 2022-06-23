@@ -9,10 +9,8 @@
       <div class="card">
         <div class="name-details">
           <h3 class="name"><%= sample.name %></h3>
-          <span class="duration"><%= sample.duration / 1000.00 %>seconds</span>
-          <button class="details">
-            details
-          </button>
+          <span class="duration"><%= sample.duration / 1000.00 %> sec</span>
+          <%= link_to 'details', show_sample_path(sample), class: 'details' %>
         </div>
         <audio class="preview" controls controlsList="nodownload" preload="metadata">
           <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">

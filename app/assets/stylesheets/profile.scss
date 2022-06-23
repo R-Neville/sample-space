@@ -144,19 +144,24 @@
           margin-bottom: 1em;
           background-color: $light;
 
-          .name-details {
+          .info-details {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            .name {
-              color: $dark;
-            }
+            > div {
+              display: flex;
+              flex-direction: column;
 
-            .duration {
-              margin-left: 1em;
-              margin-right: auto;
-              color: $dark;
+              .name {
+                margin: 0;
+                color: $dark;
+              }
+
+              .visibility {
+                margin: 0;
+                color: $dark;
+              }
             }
 
             .details {
@@ -185,6 +190,11 @@
           .preview::-webkit-media-controls-current-time-display,
           .preview::-webkit-media-controls-time-remaining-display {
             display: none;
+          }
+
+          .duration {
+            text-align: center;
+            color: $dark;
           }
         }
       }

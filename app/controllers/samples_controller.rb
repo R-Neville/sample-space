@@ -3,7 +3,7 @@ include WaveFile
 
 class SamplesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_sample, only: [:edit, :update, :show, :destory]
+  before_action :set_sample, only: [:edit, :update, :show, :destroy]
 
   def show
   end
@@ -38,14 +38,14 @@ class SamplesController < ApplicationController
   end
 
   def destroy
-    @sample.destory
+    @sample.destroy
     redirect_to profile_uploads_path, status: :see_other
   end
 
   private
 
   def set_sample
-    @sample = Sample.find(params[:id])
+    @sample = current_user.samples.find(params[:id])
   end
 
   def sample_params

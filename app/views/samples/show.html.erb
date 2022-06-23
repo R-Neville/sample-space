@@ -29,4 +29,8 @@
       <div class="value"><%= @sample.sample_rate %>Hz</div>
     </div>
   </div>
+  <div class="danger-zone">
+    <h2>DANGER ZONE</h2>
+    <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
+  </div>
 </div>

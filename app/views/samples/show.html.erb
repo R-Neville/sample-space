@@ -13,6 +13,13 @@
   <audio class="preview" controls controlsList="nodownload" preload="metadata">
     <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">
   </audio>
+  <% if @sample.tag_list.count != 0 %>
+    <div class="tags">
+      <% @sample.tag_list.each do |tag| %>
+        <%= link_to "##{tag}",  show_tag_path(tag) %>
+      <% end %>
+    </div>
+  <% end %>
   <div class="description">
     <h2>Description</h2>
     <% if @sample.description %>

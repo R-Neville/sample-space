@@ -20,12 +20,18 @@
       <%= form.file_field :audio_file %>
     </div>
 
+    <div class="field">
+      <%= form.label :tag_list, 'tags (separated by commas)' %>
+      <%= form.text_field :tag_list %>
+    </div>
+
     <div class="field checkbox">
       <%= form.label :is_public, 'I want this sample to be public' %>
       <%= form.check_box :is_public %>
     </div>
     
     <div class="actions">
+      <%= link_to 'back', :back %>
       <%= form.submit 'upload' %>
     </div>
   <% end %>

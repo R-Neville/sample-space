@@ -54,7 +54,7 @@ class SamplesController < ApplicationController
 
   def sample_params
     params.require(:sample).permit(:name, :description, :duration, :sample_rate, :bit_depth,
-                                  :likes, :downloads, :price, :audio_file, :is_public)
+                                  :likes, :downloads, :price, :audio_file, :is_public, :tag_list)
   end
 
   def add_metadata_to_params

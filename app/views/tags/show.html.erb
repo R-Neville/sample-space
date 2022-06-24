@@ -1,22 +1,10 @@
-<section class="creator-wrapper">
-  <div class="info">
-    <% if @creator.avatar.present? %>
-    <div class="avatar">
-      <%= image_tag @creator.avatar %>
-    </div>
-    <% else %>
-    <div class="avatar">
-      <%= image_tag 'user-icon.svg' %>
-    </div>
-    <% end %>
-    <div class="names">
-      <h1 class="full-name"><%= @creator.first_name %> <%= @creator.last_name %></h1>
-      <h3 class="username">@<%= @creator.username %>
-    </div>
-    <div class="stats">
-      <span><%= pluralize(@samples.count, 'sample') %></span>
-    </div>
-  </div>
+<div class="tag-wrapper">
+  <% if @tag %>
+    <h1>#<%= @tag %></h1>
+    <span class="count"><%= pluralize(@samples.length, 'sample') %></span>
+  <% else %>
+    <h1>¯\_(ツ)_/¯</h1>
+  <% end %>
   <div class="content">
     <% @samples.each do |sample| %>
       <div class="card">
@@ -30,7 +18,14 @@
           <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
         </audio>
         <span class="duration"><%= sample.duration %></span>
+        <div class="tags">
+          <% sample.tag_list.each do |tag| %>
+            <% if tag != @tag %>
+              <%= link_to "##{tag}",  show_tag_path(tag) %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
-</section>
+</div>

@@ -1,16 +1,28 @@
-<% if @samples.length == 0 %>
-  <div class="nothing-to-show">
-    <p>Nothing to show yet...</p>
-    <%= link_to 'upload samples', upload_path %>
+<section class="creator-wrapper">
+  <div class="info">
+    <% if @creator.avatar.present? %>
+    <div class="avatar">
+      <%= image_tag @creator.avatar %>
+    </div>
+    <% else %>
+    <div class="avatar">
+      <%= image_tag 'user-icon.svg' %>
+    </div>
+    <% end %>
+    <div class="names">
+      <h1 class="full-name"><%= @creator.first_name %> <%= @creator.last_name %></h1>
+      <h3 class="username">@<%= @creator.username %>
+    </div>
+    <div class="stats">
+      <span><%= pluralize(@samples.count, 'sample') %></span>
+    </div>
   </div>
-<% else %>
-  <div class="uploads-wrapper">
+  <div class="content">
     <% @samples.each do |sample| %>
       <div class="card">
         <div class="info-details">
           <div>
             <h3 class="name"><%= sample.name %></h3>
-            <h5 class="visibility"><%= sample.is_public ? 'public' : 'private' %></h5>
           </div>
           <%= link_to 'details', show_sample_path(sample), class: 'details' %>
         </div>
@@ -26,5 +38,4 @@
       </div>
     <% end %>
   </div>
-<% end %>
-
+</section>

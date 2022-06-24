@@ -15,12 +15,18 @@
       <%= form.text_area :description, autocomplete: "description" %>
     </div>
 
+    <div class="field">
+      <%= form.label :tag_list, 'tags (separated by spaces)' %>
+      <%= form.text_field :tag_list, autocomplete: "tag_list" %>
+    </div>
+
     <div class="field checkbox">
       <%= form.label :is_public, 'I want this sample to be public' %>
       <%= form.check_box :is_public, autocomplete: "public" %>
     </div>
     
     <div class="actions">
+      <%= link_to 'back', :back %>
       <%= form.submit 'update' %>
     </div>
   <% end %>

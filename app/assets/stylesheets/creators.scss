@@ -198,6 +198,23 @@
         text-align: center;
         color: $dark;
       }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+          padding: 0.5em 1em;
+          text-decoration: none;
+          color: $dark;
+          transition: background-color 0.4s ease, color 0.4s ease;
+        
+          &:hover {
+            background-color: $dark;
+            color: $light;
+          }
+        }
+      }
     }
   }
 }

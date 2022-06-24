@@ -4,4 +4,6 @@ class Sample < ApplicationRecord
   validates_presence_of :audio_file, file_content_type: { allow: ['audio/x-wav'] }
   validates_presence_of :name
   acts_as_taggable_on :tags
+
+  ActsAsTaggableOn.delimiter = ' '
 end

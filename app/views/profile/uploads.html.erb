@@ -20,7 +20,7 @@
         <span class="duration"><%= sample.duration %></span>
         <div class="tags">
           <% sample.tag_list.each do |tag| %>
-            <a href="">#<%= tag %></a>
+            <%= link_to "##{tag}",  show_tag_path(tag) %>
           <% end %>
         </div>
       </div>

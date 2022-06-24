@@ -16,7 +16,7 @@
   <% if @sample.tag_list.count != 0 %>
     <div class="tags">
       <% @sample.tag_list.each do |tag| %>
-        <a href="">#<%= tag %></a>
+        <%= link_to "##{tag}",  show_tag_path(tag) %>
       <% end %>
     </div>
   <% end %>

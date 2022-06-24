@@ -9,9 +9,6 @@ class SamplesController < ApplicationController
     @creator = User.find(@sample.user_id)
   end
 
-  def download
-  end
-
   def new
     @sample = Sample.new
   end

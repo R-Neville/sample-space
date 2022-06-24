@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   # Samples controller
   get '/upload', to: 'samples#new'
   post '/upload', to: 'samples#create'
-  get '/download/:id', to: 'samples#download', as: 'download'
   get '/samples/:id', to: 'samples#show', as: 'show_sample'
   get '/samples/:id/edit', to: 'samples#edit', as: 'edit_sample'
   patch '/samples/:id/edit', to: 'samples#update'
@@ -30,4 +29,9 @@ Rails.application.routes.draw do
   # Tags controller
   get '/tags', to: 'tags#index'
   get '/tags/:tag', to: 'tags#show', as: 'show_tag'
+
+  # Downloads controller
+  get '/download/sample/:id', to: 'downloads#sample', as: 'download_sample'
+  get '/download/sample/:id/link', to: 'downloads#link', as: 'download_sample_link'
+  get '/download/thankyou', to: 'downloads#thankyou', as: 'download_thankyou'
 end

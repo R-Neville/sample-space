@@ -134,6 +134,27 @@
     display: none;
   }
 
+  .tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    a {
+      padding: 0.5em 1em;
+      margin: 5px;
+      text-decoration: none;
+      background-color: $light;
+      color: $dark;
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+      &:hover {
+        background-color: $dark;
+        color: $light;
+      }
+    }
+  }
+
   .description,
   .properties {
     padding: 1em;

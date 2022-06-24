@@ -1,6 +1,7 @@
 <div class="tag-wrapper">
   <% if @tag %>
     <h1>#<%= @tag %></h1>
+    <span class="count"><%= pluralize(@samples.length, 'sample') %></span>
   <% else %>
     <h1>¯\_(ツ)_/¯</h1>
   <% end %>

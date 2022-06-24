@@ -13,12 +13,14 @@
   margin: auto;
 
   h1 {
+    text-align: center;
+    font-size: 3em;
     color: $dark;
-    font-size: 5em;
   }
 
   .index {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     .card {

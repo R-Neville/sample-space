@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   # Creators controller
   get '/creators', to: 'creators#index'
-  get '/creators/:username', to: 'creators#view', as: 'creator'
+  get '/creators/:username', to: 'creators#show', as: 'creator'
 end

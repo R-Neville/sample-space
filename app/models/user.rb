@@ -9,5 +9,5 @@ class User < ApplicationRecord
               file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
   
   has_many :samples, dependent: :destroy
-  
+  has_many :downloads, dependent: :destroy
 end

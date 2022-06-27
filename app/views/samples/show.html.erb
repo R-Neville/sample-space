@@ -21,6 +21,12 @@
       <% end %>
     </div>
   <% end %>
+  <div class="stats">
+    <div class="downloads">
+      <span><%= @downloads %></span>
+      <%= image_tag 'download-dark.svg' %>
+    </div>
+  </div>
   <div class="description">
     <h2>Description</h2>
     <% if @sample.description %>

@@ -134,6 +134,27 @@
     display: none;
   }
 
+  .stats {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 1em;
+        color: $dark;
+      }
+  
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
   .tags {
     display: flex;
     justify-content: center;

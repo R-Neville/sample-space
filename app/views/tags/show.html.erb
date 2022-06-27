@@ -1,31 +1,11 @@
 <div class="tag-wrapper">
   <% if @tag %>
     <h1>#<%= @tag %></h1>
-    <span class="count"><%= pluralize(@samples.length, 'sample') %></span>
+    <span class="count"><%= pluralize(@samples_info.length, 'sample') %></span>
   <% else %>
     <h1>¯\_(ツ)_/¯</h1>
   <% end %>
   <div class="content">
-    <% @samples.each do |sample| %>
-      <div class="card">
-        <div class="info-details">
-          <div>
-            <h3 class="name"><%= sample.name %></h3>
-          </div>
-          <%= link_to 'details', show_sample_path(sample), class: 'details' %>
-        </div>
-        <audio class="preview" controls controlsList="nodownload" preload="metadata">
-          <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
-        </audio>
-        <span class="duration"><%= sample.duration %></span>
-        <div class="tags">
-          <% sample.tag_list.each do |tag| %>
-            <% if tag != @tag %>
-              <%= link_to "##{tag}",  show_tag_path(tag) %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'shared/samples' %>
   </div>
 </div>

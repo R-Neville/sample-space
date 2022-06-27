@@ -31,7 +31,12 @@ class ProfileController < ApplicationController
   end
 
   def uploads
-    @samples = current_user.samples.all
+    samples = current_user.samples.all
+    @samples_info = []
+    samples.each do |sample|
+      downloads = sample.downloads.all.count
+      @samples_info.push({sample: sample, downloads: downloads})
+    end
   end
 
   def downloads

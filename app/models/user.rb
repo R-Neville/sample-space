@@ -10,4 +10,5 @@ class User < ApplicationRecord
   
   has_many :samples, dependent: :destroy
   has_many :downloads, dependent: :destroy
+  has_many :likes, dependent: :destroy
 end

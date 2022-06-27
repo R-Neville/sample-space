@@ -40,6 +40,14 @@ class ProfileController < ApplicationController
   end
 
   def downloads
+    downloads = current_user.downloads.all
+    @samples_info = []
+    downloads.each do |download|
+      sample = Sample.where(id: download.sample_id).first
+      creator = User.where(id: sample.user_id).first
+      download_count = sample.downloads.all.count
+      @samples_info.push({sample: sample, creator: creator, downloads: download_count})
+    end
   end
 
   def likes

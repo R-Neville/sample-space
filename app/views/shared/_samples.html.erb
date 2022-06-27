@@ -6,6 +6,9 @@
         <% if request.fullpath == profile_uploads_path %>
           <h5 class="visibility"><%= info[:sample].is_public ? 'public' : 'private' %></h5>
         <% end %>
+        <% if info[:creator] %>
+          <h5 class="creator"><%= link_to "@#{info[:creator].username}", creator_path(info[:creator].username) %>
+        <% end %>
       </div>
       <%= link_to 'details', show_sample_path(info[:sample]), class: 'details' %>
     </div>

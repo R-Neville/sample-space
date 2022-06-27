@@ -260,9 +260,19 @@
         color: $dark;
       }
 
-      .visibility {
+      .visibility,
+      .creator {
         margin: 0;
         color: $dark;
+
+        a {
+          color: $dark;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
 

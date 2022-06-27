@@ -7,9 +7,7 @@ class SamplesController < ApplicationController
 
   def show
     @creator = User.find(@sample.user_id)
-  end
-
-  def download
+    @downloads = @sample.downloads.all.count
   end
 
   def new

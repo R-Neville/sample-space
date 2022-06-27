@@ -1,30 +1,11 @@
-<% if @samples.length == 0 %>
+<% if @samples_info.length == 0 %>
   <div class="nothing-to-show">
     <p>Nothing to show yet...</p>
     <%= link_to 'upload samples', upload_path %>
   </div>
 <% else %>
   <div class="uploads-wrapper">
-    <% @samples.each do |sample| %>
-      <div class="card">
-        <div class="info-details">
-          <div>
-            <h3 class="name"><%= sample.name %></h3>
-            <h5 class="visibility"><%= sample.is_public ? 'public' : 'private' %></h5>
-          </div>
-          <%= link_to 'details', show_sample_path(sample), class: 'details' %>
-        </div>
-        <audio class="preview" controls controlsList="nodownload" preload="metadata">
-          <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
-        </audio>
-        <span class="duration"><%= sample.duration %></span>
-        <div class="tags">
-          <% sample.tag_list.each do |tag| %>
-            <%= link_to "##{tag}",  show_tag_path(tag) %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'shared/samples' %>
   </div>
 <% end %>
 

@@ -1,1 +1,7 @@
-<p>downloads</p>
+<div class="downloads-wrapper">
+  <% if @samples_info.length == 0 %>
+
+  <% else %>
+    <%= render 'shared/samples' %>
+  <% end %>
+</div>

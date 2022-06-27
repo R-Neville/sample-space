@@ -106,6 +106,33 @@
       text-align: center;
     }
 
+    h5 {
+      margin-top: 0;
+      text-align: center;
+      color: $dark;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+  
+      div {
+        display: flex;
+        align-items: center;
+  
+        span {
+          font-size: 1em;
+          color: $dark;
+        }
+    
+        img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
     .actions {
       display: flex;
 
@@ -234,6 +261,121 @@
 
     h3 {
       color: $dark;
+    }
+  }
+}
+
+.sample-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: $light;
+
+  .info-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        margin: 0;
+        color: $dark;
+      }
+
+      .visibility,
+      .creator {
+        margin: 0;
+        color: $dark;
+
+        a {
+          color: $dark;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .details {
+      padding: 0.5em;
+      border: 1px solid $dark;
+      background-color: $light;
+      text-decoration: none;
+      color: $dark;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .details:hover {
+      background-color: $dark;
+      color: $light;
+    }
+  }
+
+  .preview {
+    width: 100%;
+  }
+
+  .preview::-webkit-media-controls-panel {
+    background-color: $light;
+  }
+
+  .preview::-webkit-media-controls-current-time-display,
+  .preview::-webkit-media-controls-time-remaining-display {
+    display: none;
+  }
+
+  .tags-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 1em;
+        color: $dark;
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  .duration {
+    text-align: center;
+    color: $dark;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: $dark;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    
+      &:hover {
+        background-color: $dark;
+        color: $light;
+      }
     }
   }
 }

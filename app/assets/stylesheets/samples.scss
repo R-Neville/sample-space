@@ -106,6 +106,33 @@
       text-align: center;
     }
 
+    h5 {
+      margin-top: 0;
+      text-align: center;
+      color: $dark;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+  
+      div {
+        display: flex;
+        align-items: center;
+  
+        span {
+          font-size: 1em;
+          color: $dark;
+        }
+    
+        img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
     .actions {
       display: flex;
 
@@ -132,27 +159,6 @@
   .preview::-webkit-media-controls-current-time-display,
   .preview::-webkit-media-controls-time-remaining-display {
     display: none;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
-
-    div {
-      display: flex;
-      align-items: center;
-
-      span {
-        font-size: 1em;
-        color: $dark;
-      }
-  
-      img {
-        width: 15px;
-        height: 15px;
-      }
-    }
   }
 
   .tags {

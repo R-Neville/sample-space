@@ -1,6 +1,13 @@
 <div class="samples-wrapper">
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
+    <h5><%= @sample.created_at.strftime("%Y-%m-%d") %></h5>
+    <div class="stats">
+    <div class="downloads">
+      <span><%= @downloads %></span>
+      <%= image_tag 'download-dark.svg' %>
+    </div>
+  </div>
     <div class="actions">
       <% if current_user && !(current_user.id == @sample.user_id) %>
         <%= link_to 'download', download_sample_path(@sample.id) %>
@@ -21,12 +28,6 @@
       <% end %>
     </div>
   <% end %>
-  <div class="stats">
-    <div class="downloads">
-      <span><%= @downloads %></span>
-      <%= image_tag 'download-dark.svg' %>
-    </div>
-  </div>
   <div class="description">
     <h2>Description</h2>
     <% if @sample.description %>

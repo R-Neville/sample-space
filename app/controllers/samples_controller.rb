@@ -65,8 +65,6 @@ class SamplesController < ApplicationController
     params[:sample][:duration] = duration
     params[:sample][:bit_depth] = reader.native_format.bits_per_sample
     params[:sample][:sample_rate] = reader.native_format.sample_rate
-    params[:sample][:likes] = 0
-    params[:sample][:downloads] = 0
     params[:sample][:price] = 0
     params[:sample][:audio_file].original_filename = "#{params[:sample][:name]}.wav"
   end

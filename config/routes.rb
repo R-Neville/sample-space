@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   get '/download/sample/:id', to: 'downloads#sample', as: 'download_sample'
   get '/download/sample/:id/link', to: 'downloads#link', as: 'download_sample_link'
   get '/download/thankyou', to: 'downloads#thankyou', as: 'download_thankyou'
+
+  # Likes controller
+  post '/likes/:sample_id', to: 'likes#create', as: 'like_sample'
+  delete '/likes/:sample_id', to: 'likes#destroy', as: 'unlike_sample'
 end

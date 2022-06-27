@@ -120,6 +120,11 @@
       div {
         display: flex;
         align-items: center;
+        padding: 5px;
+
+        &.liked {
+          background-color: $light;
+        }
   
         span {
           font-size: 1em;
@@ -136,14 +141,25 @@
     .actions {
       display: flex;
 
-      a {
+      a, input{
         padding: 0.5em 1em;
-        margin: 5px;
+        border: none;
         background-color: $dark;
         text-decoration: none;
+        font-size: 1em;
         color: $light;
         box-shadow: 4px 4px 4px $light;
+        cursor: pointer;
       }
+
+      a {
+        margin: 5px;
+      }
+    }
+
+    form {
+      padding: 0;
+      margin: 5px;
     }
   }
 
@@ -344,6 +360,7 @@
     div {
       display: flex;
       align-items: center;
+      padding: 5px;
 
       span {
         font-size: 1em;

@@ -9,7 +9,11 @@ class CreatorsController < ApplicationController
     @samples_info = []
     samples.each do |sample|
       downloads = sample.downloads.all.count
-      @samples_info.push({sample: sample, downloads: downloads})
+      likes = sample.likes.all.count
+      if current_user
+        liked = sample.likes.where(user_id: current_user.id).length > 0
+      end
+      @samples_info.push({sample: sample, likes: likes, liked: liked, downloads: downloads})
     end
   end
 end

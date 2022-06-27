@@ -31,6 +31,10 @@
         <% end %>
       </div>
       <div class="stats">
+        <div>
+          <span><%= info[:likes] %></span>
+          <%= image_tag 'like-dark.svg' %>
+        </div>
         <div class="downloads">
           <span><%= info[:downloads] %></span>
           <%= image_tag 'download-dark.svg' %>

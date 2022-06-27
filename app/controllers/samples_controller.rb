@@ -8,6 +8,10 @@ class SamplesController < ApplicationController
   def show
     @creator = User.find(@sample.user_id)
     @downloads = @sample.downloads.all.count
+    @likes = @sample.likes.all.count
+    if current_user
+      @liked = @sample.likes.where(user_id: current_user.id).length > 0
+    end
   end
 
   def new

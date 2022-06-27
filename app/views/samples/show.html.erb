@@ -3,11 +3,15 @@
     <h1><%= @sample.name %></h1>
     <h5><%= @sample.created_at.strftime("%Y-%m-%d") %></h5>
     <div class="stats">
-    <div class="downloads">
-      <span><%= @downloads %></span>
-      <%= image_tag 'download-dark.svg' %>
+      <div>
+        <span><%= @likes %></span>
+        <%= image_tag 'like-dark.svg' %>
+      </div>
+      <div>
+        <span><%= @downloads %></span>
+        <%= image_tag 'download-dark.svg' %>
+      </div>
     </div>
-  </div>
     <div class="actions">
       <% if current_user && !(current_user.id == @sample.user_id) %>
         <%= link_to 'download', download_sample_path(@sample.id) %>
@@ -15,6 +19,13 @@
       <% if current_user && current_user.id == @sample.user_id %>
         <%= link_to 'download', rails_blob_url(@sample.audio_file) %>
         <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+      <% end %>
+      <% if current_user %>
+        <% if !@liked %>
+          <%= button_to 'like', like_sample_path(@sample.id), method: :post %>
+        <% else %>
+          <%= button_to 'unlike', unlike_sample_path(@sample.id), method: :delete %>
+        <% end %>
       <% end %>
     </div>
   </div>

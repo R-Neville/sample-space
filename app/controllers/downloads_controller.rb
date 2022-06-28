@@ -10,6 +10,13 @@ class DownloadsController < ApplicationController
 
     if !@download
       current_user.downloads.create(sample_id: @sample.id)
+      for_user = User.find(@sample.user_id)
+      Notification.create(
+        for: for_user,
+        from: current_user,
+        sample_id: @sample.id,
+        notification_type: 'download'
+      )
     end
 
     send_data @sample.audio_file.download, disposition: 'attachment', filename: "#{@sample.name}.wav"

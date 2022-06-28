@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  for: one
+  from: one
+  sample: one
+  type: 
+
+two:
+  for: two
+  from: two
+  sample: two
+  type: 

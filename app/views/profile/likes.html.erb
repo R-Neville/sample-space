@@ -1,1 +1,10 @@
-<p>likes</p>
+<% if @samples_info.length == 0 %>
+  <div class="nothing-to-show">
+    <p>Nothing to show yet...</p>
+    <%= link_to 'browse samples', browse_path %>
+  </div>
+<% else %>
+  <div class="likes-wrapper">
+    <%= render 'shared/samples' %>
+  </div>
+<% end %>

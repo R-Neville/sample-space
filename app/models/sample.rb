@@ -5,6 +5,7 @@ class Sample < ApplicationRecord
   validates_presence_of :name
   acts_as_taggable_on :tags
   has_many :downloads, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   ActsAsTaggableOn.delimiter = ' '
 end

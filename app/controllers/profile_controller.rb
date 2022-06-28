@@ -35,7 +35,9 @@ class ProfileController < ApplicationController
     @samples_info = []
     samples.each do |sample|
       downloads = sample.downloads.all.count
-      @samples_info.push({sample: sample, downloads: downloads})
+      likes = sample.likes.all.count
+      liked = sample.likes.where(user_id: current_user.id).length > 0
+      @samples_info.push({sample: sample, likes: likes, liked: liked, downloads: downloads})
     end
   end
 
@@ -44,13 +46,24 @@ class ProfileController < ApplicationController
     @samples_info = []
     downloads.each do |download|
       sample = Sample.where(id: download.sample_id).first
+      likes = sample.likes.all.count
+      liked = sample.likes.where(user_id: current_user.id).length > 0
       creator = User.where(id: sample.user_id).first
       download_count = sample.downloads.all.count
-      @samples_info.push({sample: sample, creator: creator, downloads: download_count})
+      @samples_info.push({sample: sample, creator: creator, likes: likes, liked: liked, downloads: download_count})
     end
   end
 
   def likes
+    likes = current_user.likes.all
+    @samples_info = []
+    likes.each do |like|
+      sample = Sample.where(id: like.sample_id).first
+      creator = User.where(id: sample.user_id).first
+      likes_count = Like.where(sample_id: sample.id).count
+      download_count = sample.downloads.all.count
+      @samples_info.push({sample: sample, creator: creator, likes: likes_count, downloads: download_count})
+    end
   end
 
   def wishlist

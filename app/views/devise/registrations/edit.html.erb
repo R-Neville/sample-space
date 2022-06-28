@@ -47,6 +47,15 @@
     <%= f.check_box :is_creator, autocomplete: "is_creator" %>
   </div>
 
+  <p>
+    If you're a creator, the text you enter here will be shown
+    as a blurb on your page:
+  </p>
+
+  <div class="field">
+    <%= f.text_area :blurb, autocomplete: "blurb", maxlength: 150 %>
+  </div>
+
   <p>Enter your current password to confirm changes:</p>
 
   <div class="field">

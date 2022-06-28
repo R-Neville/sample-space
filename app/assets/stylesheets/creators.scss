@@ -121,6 +121,13 @@
       color: $light;
     }
 
+    .blurb {
+      padding: 1em;
+      width: 100%;
+      text-align: center;
+      color: $light;
+    }
+
     .nothing-to-show {
       display: flex;
       flex-direction: column;

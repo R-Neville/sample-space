@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_27_051901) do
+ActiveRecord::Schema.define(version: 2022_06_28_011919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(version: 2022_06_27_051901) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["sample_id"], name: "index_likes_on_sample_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "for_id", null: false
+    t.bigint "from_id", null: false
+    t.bigint "sample_id", null: false
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["for_id"], name: "index_notifications_on_for_id"
+    t.index ["from_id"], name: "index_notifications_on_from_id"
+    t.index ["sample_id"], name: "index_notifications_on_sample_id"
   end
 
   create_table "samples", force: :cascade do |t|
@@ -128,6 +140,9 @@ ActiveRecord::Schema.define(version: 2022_06_27_051901) do
   add_foreign_key "downloads", "users"
   add_foreign_key "likes", "samples"
   add_foreign_key "likes", "users"
+  add_foreign_key "notifications", "samples"
+  add_foreign_key "notifications", "users", column: "for_id"
+  add_foreign_key "notifications", "users", column: "from_id"
   add_foreign_key "samples", "users"
   add_foreign_key "taggings", "tags"
 end

@@ -126,11 +126,55 @@
       }
 
       .uploads-wrapper,
-      .downloads-wrapper {
+      .downloads-wrapper,
+      .likes-wrapper,
+      .notifications-wrapper {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
+      }
+
+      .notifications-wrapper {
+        .notification-card {
+          display: flex;
+          align-items: center;
+          padding: 1em;
+          margin-bottom: 1em;
+          background-color: $light;
+          
+          img {
+            width: 35px;
+            height: 35px;
+            margin-right: 1em;
+          }
+
+          .details {
+            margin-right: auto;
+
+            p {
+              margin: 0;
+              color: $dark;
+
+              a {
+                color: $dark;
+              }
+            }
+
+            span {
+              color: $dark;
+            }
+          }
+
+          .dismiss {
+            padding: 0.5em 1em;
+            background-color: $dark;
+            border: none;
+            font-size: 1em;
+            color: $light;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

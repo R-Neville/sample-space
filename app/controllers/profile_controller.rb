@@ -9,7 +9,7 @@ class ProfileController < ApplicationController
 
     @links = [
       {
-        text: 'recent',
+        text: 'notifications',
         url: url_helpers.profile_path
       },
       {
@@ -28,6 +28,13 @@ class ProfileController < ApplicationController
   end
 
   def index
+    notifications = Notification.where(for_id: current_user.id)
+    @notifications = []
+    notifications.each do |n|
+      from_user = User.find(n.from_id)
+      sample = Sample.find(n.sample_id)
+      @notifications.push(object: n, from_user: from_user, sample: sample)      
+    end
   end
 
   def uploads

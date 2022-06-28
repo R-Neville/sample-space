@@ -1,1 +1,34 @@
-<p>recent</p>
+<% if @notifications.length == 0 %>
+  <div class="nothing-to-show">
+    <p>You're all up-to-date!</p>
+  </div>
+<% else %>
+  <div class="notifications-wrapper">
+    <% @notifications.each do |n| %>
+      <% if n[:object].notification_type == 'download' %>
+        <div class="notification-card">
+          <%= image_tag 'download-dark.svg' %>
+          <% if n[:from_user].is_creator %>
+            <div class="details">
+              <p>
+                <%= link_to "@#{n[:from_user].username}", creator_path(n[:from_user].id) %>
+                downloaded your sample "<%= link_to n[:sample].name, show_sample_path(n[:sample].id) %>"
+              </p>
+              <span><%= n[:object].created_at.strftime("%Y-%m-%d") %></span>
+            </div>
+            <%= button_to 'dismiss', dismiss_notification_path(n[:object].id), class: 'dismiss', method: :delete %>
+          <% else %>
+            <div class="details">
+              <p>
+                <strong>@<%= n[:from_user].username %></strong>
+                downloaded your sample "<%= link_to n[:sample].name, show_sample_path(n[:sample].id) %>"
+              </p>
+              <span><%= n[:object].created_at.strftime("%Y-%m-%d") %></span>
+            </div>
+            <%= button_to 'dismiss', dismiss_notification_path(n[:object].id), class: 'dismiss', method: :delete %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

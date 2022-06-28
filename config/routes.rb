@@ -38,4 +38,7 @@ Rails.application.routes.draw do
   # Likes controller
   post '/likes/:sample_id', to: 'likes#create', as: 'like_sample'
   delete '/likes/:sample_id', to: 'likes#destroy', as: 'unlike_sample'
+
+  # Notifications controller
+  delete '/notifications/:id', to: 'notifications#destroy', as: 'dismiss_notification'
 end

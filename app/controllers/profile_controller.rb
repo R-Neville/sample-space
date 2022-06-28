@@ -55,6 +55,15 @@ class ProfileController < ApplicationController
   end
 
   def likes
+    likes = current_user.likes.all
+    @samples_info = []
+    likes.each do |like|
+      sample = Sample.where(id: like.sample_id).first
+      creator = User.where(id: sample.user_id).first
+      likes_count = Like.where(sample_id: sample.id).count
+      download_count = sample.downloads.all.count
+      @samples_info.push({sample: sample, creator: creator, likes: likes_count, downloads: download_count})
+    end
   end
 
   def wishlist

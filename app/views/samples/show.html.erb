@@ -14,7 +14,11 @@
     </div>
     <div class="actions">
       <% if current_user && !(current_user.id == @sample.user_id) %>
-        <%= link_to 'download', download_sample_path(@sample.id) %>
+        <% if !@downloaded %>
+          <%= link_to 'download', download_sample_path(@sample.id) %>
+        <% else %>
+          <%= link_to 'download', rails_blob_url(@sample.audio_file) %>
+        <% end %>
       <% end %>
       <% if current_user && current_user.id == @sample.user_id %>
         <%= link_to 'download', rails_blob_url(@sample.audio_file) %>

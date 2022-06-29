@@ -11,6 +11,7 @@ class SamplesController < ApplicationController
     @likes = @sample.likes.all.count
     if current_user
       @liked = @sample.likes.where(user_id: current_user.id).length > 0
+      @downloaded = @sample.downloads.where(user_id: current_user.id).length > 0
     end
   end
 
@@ -65,7 +66,9 @@ class SamplesController < ApplicationController
     s_str = reader.total_duration.seconds.to_s
     m_str = reader.total_duration.minutes.to_s
     h_str = reader.total_duration.hours.to_s
+
     duration = "#{h_str}:#{m_str}:#{s_str}.#{ms_str}"
+    
     params[:sample][:duration] = duration
     params[:sample][:bit_depth] = reader.native_format.bits_per_sample
     params[:sample][:sample_rate] = reader.native_format.sample_rate

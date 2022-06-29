@@ -4,7 +4,8 @@
 
 @import 'variables';
 
-.browse-wrapper {
+.browse-wrapper,
+.about-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +13,13 @@
   height: 100%;
   max-width: 850px;
   margin: auto;
+  
+  h1 {
+    font-size: 3em;
+    color: $dark;
+  }
 
-  .recent {
-    display: flex;
+  p {
+    color: $dark;
   }
 }

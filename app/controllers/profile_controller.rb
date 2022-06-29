@@ -19,10 +19,6 @@ class ProfileController < ApplicationController
       {
         text: 'likes',
         url: url_helpers.profile_likes_path
-      },
-      {
-        text: 'wishlist',
-        url: url_helpers.profile_wishlist_path
       }
     ]
   end
@@ -71,9 +67,6 @@ class ProfileController < ApplicationController
       download_count = sample.downloads.all.count
       @samples_info.push({sample: sample, creator: creator, likes: likes_count, downloads: download_count})
     end
-  end
-
-  def wishlist
   end
 
   protected

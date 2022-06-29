@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get '/profile/uploads', to: 'profile#uploads'
   get '/profile/downloads', to: 'profile#downloads'
   get '/profile/likes', to: 'profile#likes'
-  get '/profile/wishlist', to: 'profile#wishlist'
 
   # Samples controller
   get '/upload', to: 'samples#new'

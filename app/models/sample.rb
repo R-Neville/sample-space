@@ -7,6 +7,7 @@ class Sample < ApplicationRecord
   has_many :downloads, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   ActsAsTaggableOn.delimiter = ' '
 end

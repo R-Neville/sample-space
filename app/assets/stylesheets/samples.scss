@@ -284,7 +284,8 @@
   }
 }
 
-.sample-card {
+.sample-card,
+.sample-card-small {
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -303,6 +304,10 @@
 
       .name {
         margin: 0;
+        margin-right: 0.5em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         color: $dark;
       }
 
@@ -408,6 +413,25 @@
       .tags {
         justify-content: center;
       }
+    }
+  }
+}
+
+.sample-card-small {
+  max-width: 300px;
+  margin: 0.5em;
+
+  .duration {
+    margin-bottom: 0.5em;
+  }
+
+  .tags-stats {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tags {
+      justify-content: center;
     }
   }
 }

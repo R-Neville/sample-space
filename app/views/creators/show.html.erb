@@ -17,12 +17,17 @@
       <span><%= pluralize(@samples_info.count, 'sample') %></span>
     </div>
   </div>
-  <div class="content">
-    <% if @creator.blurb %>
-      <div class="blurb">
-        <%= @creator.blurb %>
-      </div>
+  <div class="creator-tags">
+    <% @tags.each do |tag| %>
+      <%= link_to "##{tag}", show_tag_path(tag) %>
     <% end %>
+  </div>
+  <% if @creator.blurb %>
+    <div class="blurb">
+      <%= @creator.blurb %>
+    </div>
+  <% end %>
+  <div class="content">
     <%= render 'shared/samples' %>
   </div>
 </section>

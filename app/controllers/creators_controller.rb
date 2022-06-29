@@ -6,6 +6,15 @@ class CreatorsController < ApplicationController
   def show
     @creator = User.where(username: params[:username]).first
     samples = @creator.samples.where(is_public: true)
+    
+    # Get all tags used by the creator:
+    @tags = []
+    samples.each do |sample|
+      @tags.concat sample.tag_list
+    end
+    @tags.uniq!
+
+    # Create sample info hash for each sample:
     @samples_info = []
     samples.each do |sample|
       downloads = sample.downloads.all.count

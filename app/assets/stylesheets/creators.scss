@@ -108,6 +108,30 @@
     }
   }
 
+  .creator-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5em;
+
+    a {
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      background-color: $dark;
+      text-decoration: none;
+      color: $light;
+      box-shadow: 4px 4px 4px $light;
+      cursor: pointer;
+    }
+  }
+
+  .blurb {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    color: $dark;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -117,13 +141,6 @@
 
     * {
       color: $light;
-    }
-
-    .blurb {
-      padding: 1em;
-      width: 100%;
-      text-align: center;
-      color: $dark;
     }
 
     .nothing-to-show {

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   # Downloads controller
   get '/download/sample/:id', to: 'downloads#sample', as: 'download_sample'
-  get '/download/sample/:id/link', to: 'downloads#link', as: 'download_sample_link'
+  patch '/download/sample/:id', to: 'downloads#link', as: 'download_sample_link'
   get '/download/thankyou', to: 'downloads#thankyou', as: 'download_thankyou'
 
   # Likes controller

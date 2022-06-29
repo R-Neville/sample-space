@@ -1,3 +1,43 @@
 // Place all the styles related to the downloads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.download-sample-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 850px;
+  margin: auto;
+
+  h1 {
+    color: $dark;
+  }
+
+  p {
+    max-width: 400px;
+    text-align: center;
+    color: $dark;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+
+    input {
+      padding: 0.5em 1em;
+      border: none;
+      background-color: $dark;
+      font-size: 1em;
+      text-decoration: none;
+      color: $light;
+      box-shadow: 4px 4px 4px $light;
+      cursor: pointer;
+    }
+  }
+}

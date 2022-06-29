@@ -1,3 +1,9 @@
 <div class="download-sample-wrapper">
-  <%= link_to "#{@sample.name}.wav", download_sample_link_path(@sample.id) %>
+  <h1>Download Sample</h1>
+  <p>
+    Please use the following button to download,
+    your new sample. In future, you will be able to
+    download it directly from its details page:
+  </p>
+  <%= button_to "#{@sample.name}.wav", download_sample_link_path(@sample.id), method: :patch %>
 </div>

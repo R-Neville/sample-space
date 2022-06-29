@@ -3,9 +3,7 @@
 one:
   sample: one
   user: one
-  content: MyText
 
 two:
   sample: two
   user: two
-  content: MyText

@@ -1,7 +1,6 @@
 <div class="samples-wrapper">
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
-    <h5><%= @sample.created_at.strftime("%Y-%m-%d") %></h5>
     <div class="stats">
       <div>
         <span><%= @likes %></span>
@@ -12,7 +11,17 @@
         <%= image_tag 'download-dark.svg' %>
       </div>
     </div>
+    <audio class="preview" controls controlsList="nodownload" preload="metadata">
+      <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">
+    </audio>
     <div class="actions">
+      <% if current_user %>
+        <% if !@liked %>
+          <%= button_to 'like', like_sample_path(@sample.id), method: :post %>
+        <% else %>
+          <%= button_to 'unlike', unlike_sample_path(@sample.id), method: :delete %>
+        <% end %>
+      <% end %>
       <% if current_user && !(current_user.id == @sample.user_id) %>
         <% if !@downloaded %>
           <%= link_to 'download', download_sample_path(@sample.id) %>
@@ -24,25 +33,8 @@
         <%= link_to 'download', rails_blob_url(@sample.audio_file) %>
         <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
       <% end %>
-      <% if current_user %>
-        <% if !@liked %>
-          <%= button_to 'like', like_sample_path(@sample.id), method: :post %>
-        <% else %>
-          <%= button_to 'unlike', unlike_sample_path(@sample.id), method: :delete %>
-        <% end %>
-      <% end %>
     </div>
   </div>
-  <audio class="preview" controls controlsList="nodownload" preload="metadata">
-    <source src="<%= rails_blob_url(@sample.audio_file) %>" type="<%= @sample.audio_file.content_type %>">
-  </audio>
-  <% if @sample.tag_list.count != 0 %>
-    <div class="tags">
-      <% @sample.tag_list.each do |tag| %>
-        <%= link_to "##{tag}",  show_tag_path(tag) %>
-      <% end %>
-    </div>
-  <% end %>
   <div class="description">
     <h2>Description</h2>
     <% if @sample.description %>
@@ -50,7 +42,19 @@
     <% else %>
       <p>No description...</p>
     <% end %>
+    <% if !(current_user && current_user.id == @creator.id) %>
+      <div class="creator">
+        <%= link_to "@#{@creator.username}", creator_path(@creator.username) %>
+      </div>
+    <% end %>
   </div>
+  <% if @sample.tag_list.count != 0 %>
+    <div class="tags">
+      <% @sample.tag_list.each do |tag| %>
+        <%= link_to "##{tag}",  show_tag_path(tag) %>
+      <% end %>
+    </div>
+  <% end %>
   <div class="properties">
     <h2>Properties</h2>
     <div class="property">
@@ -74,19 +78,8 @@
       </div>
     </div>
   <% end %>
-  <% if !(current_user && current_user.id == @creator.id) %>
-    <div class="creator">
-      <h3>Created by <%= link_to "@#{@creator.username}", creator_path(@creator.username) %></h3>
-    </div>
-  <% end %>
   <div class="comments-wrapper">
     <h2>Comments</h2>
-    <% if current_user %>
-      <%= form_with class: 'new-comment', url: sample_comments_path(@sample.id), model: @comment do |form| %>
-        <%= form.rich_text_area :content %>
-        <%= form.submit 'comment' %>
-      <% end %>
-    <% end %>
     <% @comments_info.each do |info| %>
       <div class="comment-card">
         <div class="user">
@@ -104,6 +97,12 @@
           </div>
         <% end %>
       </div>
+    <% end %>
+    <% if current_user %>
+      <%= form_with class: 'new-comment', url: sample_comments_path(@sample.id), model: @comment do |form| %>
+        <%= form.rich_text_area :content, placeholder: 'enter a comment here...' %>
+        <%= form.submit 'comment' %>
+      <% end %>
     <% end %>
   </div>
 </div>

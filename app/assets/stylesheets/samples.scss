@@ -13,6 +13,7 @@
   margin: auto;
 
   h1 {
+    margin: 0;
     color: $dark;
   }
 
@@ -201,6 +202,7 @@
   .description,
   .properties {
     padding: 1em;
+    width: 100%;
     margin-bottom: 1em;
     background-color: $dark;
     box-shadow: 4px 4px 4px $light;
@@ -212,6 +214,14 @@
     h2 {
       margin: 0;
       border-bottom: 1px solid $light;
+    }
+
+    .creator {
+      display: flex;
+
+      a {
+        margin-left: auto;
+      }
     }
   }
 
@@ -260,25 +270,6 @@
         background-color: #C0392B;
         text-decoration: none;
         color: #FADBD8;
-      }
-    }
-  }
-
-  .creator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h3 {
-      color: $dark;
-
-      a {
-        text-decoration: none;
-        color: $dark;
-
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
@@ -393,13 +384,14 @@
 
     a {
       padding: 0.5em 1em;
+      background-color: $light !important;
       text-decoration: none;
-      color: $dark;
+      color: $dark !important;
       transition: background-color 0.4s ease, color 0.4s ease;
     
       &:hover {
-        background-color: $dark;
-        color: $light;
+        background-color: $dark !important;
+        color: $light !important;
       }
     }
   }

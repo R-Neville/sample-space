@@ -1,3 +1,69 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.comments-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    color: $dark;
+  }
+
+  .new-comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    background-color: $dark;
+    box-shadow: 4px 4px 4px $light;
+
+    button.trix-button {
+      background-color: #fff;
+    }
+  
+    trix-editor {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      background-color: #fff;
+    }
+
+    input[type=submit] {
+      padding: 0.5em 1em;
+      margin-left: auto;
+      border: none;
+      background-color: $light;
+      font-size: 1em;
+      color: $dark;
+    }
+  }
+  
+  .comment-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: $light;
+  
+    .user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em;
+  
+      img {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.5em;
+      }
+  
+      h5 {
+        margin: 0;
+        font-size: 1em;
+        color: $dark;
+      }
+    }
+    
+  }
+}

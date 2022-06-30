@@ -3,7 +3,7 @@ include WaveFile
 
 class SamplesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :set_sample, only: [:edit, :update, :show, :destroy, :download]
+  before_action :set_sample, only: [:edit, :update, :show, :destroy]
 
   def show
     @creator = User.find(@sample.user_id)
@@ -12,6 +12,14 @@ class SamplesController < ApplicationController
     if current_user
       @liked = @sample.likes.where(user_id: current_user.id).length > 0
       @downloaded = @sample.downloads.where(user_id: current_user.id).length > 0
+    end
+
+    @comment = @sample.comments.new
+    comments = @sample.comments.order(created_at: :desc)
+    @comments_info = []
+    comments.each do |comment|
+      user = User.find(comment.user_id)
+      @comments_info.push({comment: comment, user: user})
     end
   end
 

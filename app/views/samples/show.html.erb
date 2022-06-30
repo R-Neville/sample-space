@@ -79,4 +79,22 @@
       <h3>Created by <%= link_to "@#{@creator.username}", creator_path(@creator.username) %></h3>
     </div>
   <% end %>
+  <div class="comments-wrapper">
+    <h2>Comments</h2>
+    <% if current_user %>
+      <%= form_with class: 'new-comment', url: sample_comments_path(@sample.id), model: @comment do |form| %>
+        <%= form.rich_text_area :content %>
+        <%= form.submit 'comment' %>
+      <% end %>
+    <% end %>
+    <% @comments_info.each do |info| %>
+      <div class="comment-card">
+        <div class="user">
+          <%= image_tag info[:user].avatar %>
+          <h5>@<%=  info[:user].username %></h5>
+        </div>
+        <%= info[:comment].content %>
+      </div>
+    <% end %>
+  </div>
 </div>

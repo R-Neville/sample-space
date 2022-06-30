@@ -3,6 +3,7 @@ class DownloadsController < ApplicationController
   before_action :set_sample
 
   def sample
+    @creator = User.find(@sample.user_id)
   end
 
   def link
@@ -23,10 +24,6 @@ class DownloadsController < ApplicationController
   end
 
   private
-
-  def create
-
-  end
 
   def set_sample
     @sample = Sample.find(params[:id])

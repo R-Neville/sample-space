@@ -90,7 +90,7 @@
           </div>
         </div>
         <%= info[:comment].content %>
-        <% if info[:comment].user_id == current_user.id %>
+        <% current_user && current_user.id == if info[:comment].user_id %>
           <div class="actions">
             <%= link_to 'edit', edit_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id) %>
             <%= button_to 'delete', delete_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), method: :delete %>

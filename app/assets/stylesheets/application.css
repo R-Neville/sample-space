@@ -281,6 +281,7 @@ header .hamburger .line {
 main {
   flex-grow: 1;
   padding: 1em;
+  background-image: url('pixel-weave.png');
 }
 
 footer {

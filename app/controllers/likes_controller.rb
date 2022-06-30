@@ -10,8 +10,8 @@ class LikesController < ApplicationController
       for_user = User.find(sample.user_id)
       
       Notification.create(
-        for: for_user,
-        from: current_user,
+        for_id: for_user.id,
+        from_id: current_user.id,
         sample_id: sample.id,
         notification_type: 'like'
       )

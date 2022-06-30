@@ -16,6 +16,12 @@ class CommentsController < ApplicationController
     @comment = @sample.comments.create(comment_params)
 
     if @comment.save
+      Notification.create(
+        for_id: @sample.user_id,
+        from_id: current_user.id,
+        sample_id: @sample.id,
+        notification_type: 'comment'
+      )
       redirect_to show_sample_path(@sample.id)
     else
       message = "Your comment can't be blank."

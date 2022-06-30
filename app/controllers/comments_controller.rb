@@ -23,6 +23,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to show_sample_path(@sample.id)
+  end
+
   private
 
   def get_sample

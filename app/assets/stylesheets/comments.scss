@@ -57,13 +57,64 @@
         height: 35px;
         margin-right: 0.5em;
       }
-  
-      h5 {
-        margin: 0;
-        font-size: 1em;
+      
+      .details {
+        display: flex;
+        flex-direction: column;
+
+        h5 {
+          margin: 0;
+          font-size: 1em;
+          color: $dark;
+        }
+
+        span {
+          font-size: 15px;
+          color: $dark;
+        }
+      }
+    }
+
+    .trix-content {
+      padding: 0.5em;
+      border: 1px solid $dark;
+      border-radius: 3px;
+      margin-bottom: 0.5em;
+
+      * {
         color: $dark;
       }
     }
     
+    .actions {
+      display: flex;
+
+      form {
+        padding: 0;
+        border: none;
+        background-color: none;
+
+        input {
+          padding: 0.5em 1em;
+          border: none;
+          background-color: $dark;
+          font-size: 1em;
+          color: $light;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        padding: 0.5em 1em;
+        border: none;
+        margin-left: auto;
+        margin-right: 0.5em;
+        background-color: $dark;
+        font-size: 1em;
+        text-decoration: none;
+        color: $light;
+        cursor: pointer;
+      }
+    }
   }
 }

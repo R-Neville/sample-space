@@ -12,8 +12,8 @@ class DownloadsController < ApplicationController
       current_user.downloads.create(sample_id: @sample.id)
       for_user = User.find(@sample.user_id)
       Notification.create(
-        for: for_user.id,
-        from: current_user.id,
+        for_id: for_user.id,
+        from_id: current_user.id,
         sample_id: @sample.id,
         notification_type: 'download'
       )

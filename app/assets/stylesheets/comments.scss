@@ -125,4 +125,44 @@
   height: 100%;
   max-width: 850px;
   margin: auto;
+
+  h1 {
+    text-align: center;
+    color: $dark;
+  }
+
+  form {
+    padding: 1em;
+    background-color: $light;
+
+    button.trix-button {
+      background-color: #fff;
+    }
+  
+    trix-editor {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      background-color: #fff;
+    }
+
+    .actions {
+      display: flex;
+
+      input[type=submit],
+      a {
+        padding: 0.5em 1em;
+        border: none;
+        background-color: $dark;
+        font-size: 1em;
+        text-decoration: none;
+        color: $light;
+        cursor: pointer;
+      }
+
+      a {
+        margin-left: auto;
+        margin-right: 0.5em;
+      }
+    }
+  }
 }

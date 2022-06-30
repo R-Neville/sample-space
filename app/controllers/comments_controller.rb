@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
       redirect_to show_sample_path(@sample.id)
     else
       message = "Your comment can't be blank."
-      redirect_to show_sample_path(@sample.id), alert: message
+      redirect_to edit_sample_comment_path(sample_id: @sample.id, comment_id: @comment.id), alert: message
     end
   end
 

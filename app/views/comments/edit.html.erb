@@ -1,3 +1,12 @@
-<div class="edit-comment">
-  edit comment
+<div class="edit-comment-wrapper">
+  <h1>Editing Comment</h1>
+  <%= render 'comments/shared/error_messages' %>
+  <%= form_with url: update_sample_comment_path, model: @comment do |form| %>
+    <div class="field">
+      <%= form.rich_text_area :content, placeholder: 'enter a comment here...' %>
+    </div>
+    <div class="actions">
+        <%= form.submit 'update' %>
+    </div>
+  <% end %>
 </div>

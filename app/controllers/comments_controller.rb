@@ -29,6 +29,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    if @comment.update(comment_params)
+      redirect_to show_sample_path(@sample.id)
+    else
+      message = "Your comment can't be blank."
+      redirect_to show_sample_path(@sample.id), alert: message
+    end
+  end
+
   def destroy
     @comment.destroy
     redirect_to show_sample_path(@sample.id)

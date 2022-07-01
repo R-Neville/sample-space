@@ -1,4 +1,4 @@
-<div class="samples-wrapper">
+<section class="sample-section">
   <div class="name-actions">
     <h1><%= @sample.name %></h1>
     <div class="stats">
@@ -17,21 +17,21 @@
     <div class="actions">
       <% if current_user %>
         <% if !@liked %>
-          <%= button_to 'like', like_sample_path(@sample.id), method: :post %>
+          <%= button_to 'like', like_sample_path(@sample.id), method: :post, class: 'dark' %>
         <% else %>
-          <%= button_to 'unlike', unlike_sample_path(@sample.id), method: :delete %>
+          <%= button_to 'unlike', unlike_sample_path(@sample.id), method: :delete, class: 'dark' %>
         <% end %>
       <% end %>
       <% if current_user && !(current_user.id == @sample.user_id) %>
         <% if !@downloaded %>
-          <%= link_to 'download', download_sample_path(@sample.id) %>
+          <%= link_to 'download', download_sample_path(@sample.id), class: 'dark' %>
         <% else %>
-          <%= link_to 'download', rails_blob_url(@sample.audio_file) %>
+          <%= link_to 'download', rails_blob_url(@sample.audio_file), class: 'dark' %>
         <% end %>
       <% end %>
       <% if current_user && current_user.id == @sample.user_id %>
-        <%= link_to 'download', rails_blob_url(@sample.audio_file) %>
-        <%= link_to 'edit', edit_sample_path(@sample), class: 'edit' %>
+        <%= link_to 'download', rails_blob_url(@sample.audio_file), class: 'dark' %>
+        <%= link_to 'edit', edit_sample_path(@sample), class: 'edit dark' %>
       <% end %>
     </div>
   </div>
@@ -51,7 +51,7 @@
   <% if @sample.tag_list.count != 0 %>
     <div class="tags">
       <% @sample.tag_list.each do |tag| %>
-        <%= link_to "##{tag}",  show_tag_path(tag) %>
+        <%= link_to "##{tag}",  show_tag_path(tag), class: 'light-hover' %>
       <% end %>
     </div>
   <% end %>
@@ -78,7 +78,7 @@
       </div>
     </div>
   <% end %>
-  <div class="comments-wrapper">
+  <section class="comments-section">
     <h2>Comments</h2>
     <% @comments_info.each do |info| %>
       <div class="comment-card">
@@ -92,8 +92,8 @@
         <%= info[:comment].content %>
         <% current_user && current_user.id == if info[:comment].user_id %>
           <div class="actions">
-            <%= link_to 'edit', edit_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id) %>
-            <%= button_to 'delete', delete_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), method: :delete %>
+            <%= link_to 'edit', edit_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), class: 'dark' %>
+            <%= button_to 'delete', delete_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), method: :delete, class: 'dark' %>
           </div>
         <% end %>
       </div>
@@ -104,5 +104,5 @@
         <%= form.submit 'comment' %>
       <% end %>
     <% end %>
-  </div>
-</div>
+  </section>
+</section>

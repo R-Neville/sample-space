@@ -1,3 +1,46 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.notification-card {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: $light;
+  
+  img {
+    width: 35px;
+    height: 35px;
+    margin-right: 1em;
+  }
+
+  .details {
+    margin-right: auto;
+
+    p {
+      margin: 0;
+      color: $dark;
+
+      a {
+        color: $dark;
+        font-weight: bold;
+      }
+    }
+
+    span {
+      color: $dark;
+    }
+  }
+
+  .dismiss {
+    padding: 0.5em 1em;
+    background-color: $dark;
+    border: none;
+    font-size: 1em;
+    color: $light;
+    cursor: pointer;
+  }
+}

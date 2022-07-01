@@ -16,8 +16,10 @@
     <%= render 'shared/header' %>
     <%= render 'shared/menu' %>
     <main>
-      <%= render 'shared/flash' %>
-      <%= yield %>
+      <div class="content-wrapper">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
     </main>
     <%= render 'shared/footer' %>
   </body>

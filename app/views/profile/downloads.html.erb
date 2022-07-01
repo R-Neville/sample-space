@@ -2,7 +2,7 @@
   <% if @samples_info.length == 0 %>
     <div class="nothing-to-show">
       <p>Nothing to show...</p>
-      <%= link_to 'browse samples', browse_path %>
+      <%= link_to 'browse samples', browse_path, class: 'light' %>
     </div>
   <% else %>
     <%= render 'shared/samples' %>

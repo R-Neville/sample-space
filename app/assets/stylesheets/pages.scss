@@ -4,53 +4,41 @@
 
 @import 'variables';
 
-.browse-wrapper,
-.about-wrapper {
+h1,
+h2 {
+  color: $dark;
+}
+
+p {
+  color: $dark;
+}
+
+.recent-uploads,
+.popular-tags {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  max-width: 850px;
-  margin: auto;
-  
-  h1,
-  h2 {
-    font-size: 3em;
-    color: $dark;
-  }
 
-  p {
-    color: $dark;
-  }
-
-  .recent,
-  .popular-tags {
+  .uploads {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-    .uploads {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+  .tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .tags {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      a {
-        padding: 0.5em 1em;
-        margin: 0.5em;
-        background-color: $dark;
-        font-size: 1em;
-        text-decoration: none;
-        color: $light;
-        box-shadow: 4px 4px 4px $light;
-        cursor: pointer;
-      }
+    a {
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      background-color: $dark;
+      font-size: 1em;
+      text-decoration: none;
+      color: $light;
+      box-shadow: 4px 4px 4px $light;
+      cursor: pointer;
     }
   }
 }

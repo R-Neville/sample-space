@@ -4,7 +4,7 @@
 
 @import 'variables';
 
-.comments-wrapper {
+.comments-section {
   display: flex;
   flex-direction: column;
 
@@ -118,7 +118,7 @@
   }
 }
 
-.edit-comment-wrapper {
+.edit-comment-section {
   display: flex;
   flex-direction: column;
   width: 100%;

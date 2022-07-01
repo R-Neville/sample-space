@@ -3,7 +3,7 @@
     <% if link_info[:url] == request.fullpath %>
       <a class="current"><%= link_info[:text] %></a>
     <% else %>
-      <a href="<%= link_info[:url] %>"><%= link_info[:text] %></a>
+      <a href="<%= link_info[:url] %>" class="light-hover"><%= link_info[:text] %></a>
     <% end %>
   <% end %>
 </nav>

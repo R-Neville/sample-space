@@ -5,23 +5,12 @@
 @import 'variables';
 
 .profile {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width: 850px;
-  margin: auto;
-
   .info {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100px;
     margin-bottom: 1em;
-
-    * {
-      color: $dark;
-    }
 
     .avatar {
       width: 100px;
@@ -46,10 +35,12 @@
 
       .full-name {
         margin: 10px 0;
+        color: $dark;
       }
 
       .username {
         margin-bottom: 10px;
+        color: $dark;
       }
     }
 
@@ -57,12 +48,6 @@
       display: flex;
 
       a {
-        padding: 0.5em 1em;
-        background-color: $dark;
-        box-shadow: 4px 4px 4px $light;
-        text-decoration: none;
-        color: $light;
-      
         &.upload {
           margin-right: 0.5em;
         }
@@ -71,11 +56,11 @@
   }
 
   .dashboard {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    box-shadow: 4px 4px 4px $light;
     background-color: $dark;
 
     nav {
@@ -83,18 +68,7 @@
       background-color: $light;
 
       a {
-        padding: 0.5em 1em;
-        background-color: $light;
-        text-decoration: none;
-        color: $dark;
-        transition: background-color 0.4s ease, color 0.4s ease;
-
         &.current {
-          background-color: $dark;
-          color: $light;
-        }
-
-        &:hover {
           background-color: $dark;
           color: $light;
         }
@@ -115,66 +89,19 @@
         }
   
         a {
-          padding: 0.5em 1em;
           margin-right: auto;
           margin-left: auto;
-          background-color: $light;
-          text-decoration: none;
-          color: $dark;
         }
       }
 
-      .uploads-wrapper,
-      .downloads-wrapper,
-      .likes-wrapper,
-      .notifications-wrapper {
+      .uploads,
+      .downloads,
+      .likes,
+      .notifications {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
-      }
-
-      .notifications-wrapper {
-        .notification-card {
-          display: flex;
-          align-items: center;
-          padding: 1em;
-          margin-bottom: 1em;
-          background-color: $light;
-          
-          img {
-            width: 35px;
-            height: 35px;
-            margin-right: 1em;
-          }
-
-          .details {
-            margin-right: auto;
-
-            p {
-              margin: 0;
-              color: $dark;
-
-              a {
-                color: $dark;
-                font-weight: bold;
-              }
-            }
-
-            span {
-              color: $dark;
-            }
-          }
-
-          .dismiss {
-            padding: 0.5em 1em;
-            background-color: $dark;
-            border: none;
-            font-size: 1em;
-            color: $light;
-            cursor: pointer;
-          }
-        }
       }
     }
   }

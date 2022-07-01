@@ -1,4 +1,4 @@
-<div class="edit-comment-wrapper">
+<section class="edit-comment-section">
   <h1>Edit Comment</h1>
   <%= form_with url: update_sample_comment_path, model: @comment do |form| %>
     <div class="field">
@@ -9,4 +9,4 @@
       <%= form.submit 'update' %>
     </div>
   <% end %>
-</div>
+</section>

@@ -4,7 +4,7 @@
 
 @import 'variables';
 
-.sample-section {
+.sample-wrapper {
   .name-actions {
     display: flex;
     flex-direction: column;
@@ -44,8 +44,10 @@
 
     .actions {
       display: flex;
+      align-items: center;
 
-      a {
+      a,
+      input {
         margin: 5px;
       }
     }

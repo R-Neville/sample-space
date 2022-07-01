@@ -29,7 +29,7 @@ header {
         color: $dark;
       }
 
-      .current {
+      &.current {
         background-color: $light;
         color: $dark;
       }

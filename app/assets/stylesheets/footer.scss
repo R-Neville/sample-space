@@ -38,7 +38,7 @@ footer {
         color: $light;
       }
 
-      .current {
+      &.current {
         background-color: $dark;
         color: $light;
       }

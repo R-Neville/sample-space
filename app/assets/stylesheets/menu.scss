@@ -1,0 +1,76 @@
+@import 'variables';
+
+#menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  background-color: $dark;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      padding: 0.5em;
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      color: $light;
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+      &:hover {
+        background-color: $light;
+        color: $dark;
+      }
+
+      &.current {
+        background-color: $light;
+        color: $dark;
+      }
+    }
+  }
+
+  .login-register {
+    display: flex;
+
+    .login,
+    .register {
+      padding: 0.5em 1em;
+      margin: 0.5em;
+      border: 1px solid $light;
+      text-decoration: none;
+    }
+
+    .login {
+      color: $light;
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+      &:hover {
+        background-color: $light;
+        color: $dark;
+      }
+    }
+
+    .register {
+      background-color: $light;
+      color: $dark;
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  #menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  #menu {
+    .login-register {
+      display: none;
+    }
+  }
+}

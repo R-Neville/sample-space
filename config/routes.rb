@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   patch '/samples/:id/edit', to: 'samples#update'
   delete '/samples/:id', to: 'samples#destroy', as: 'delete_sample'
 
+  # Comments controller
+  post '/samples/:sample_id/comments', to: 'comments#create', as: 'sample_comments'
+  get '/samples/:sample_id/comments/new', to: 'comments#new', as: 'new_sample_comment'
+  get '/samples/:sample_id/comments/:comment_id/edit', to: 'comments#edit', as: 'edit_sample_comment'
+  patch '/samples/:sample_id/comments/:comment_id', to: 'comments#update', as: 'update_sample_comment'
+  delete '/samples/:sample_id/comments/:comment_id', to: 'comments#destroy', as: 'delete_sample_comment'
+
   # Creators controller
   get '/creators', to: 'creators#index'
   get '/creators/:username', to: 'creators#show', as: 'creator'

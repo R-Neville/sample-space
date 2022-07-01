@@ -1,33 +1,31 @@
-<section class="creator-wrapper">
-  <div class="info">
-    <% if @creator.avatar.present? %>
-    <div class="avatar">
-      <%= image_tag @creator.avatar %>
-    </div>
-    <% else %>
-    <div class="avatar">
-      <%= image_tag 'user-icon.svg' %>
-    </div>
-    <% end %>
-    <div class="names">
-      <h1 class="full-name"><%= @creator.first_name %> <%= @creator.last_name %></h1>
-      <h3 class="username">@<%= @creator.username %>
-    </div>
-    <div class="stats">
-      <span><%= pluralize(@samples_info.count, 'sample') %></span>
-    </div>
+<div class="creator-info">
+  <% if @creator.avatar.present? %>
+  <div class="avatar">
+    <%= image_tag @creator.avatar %>
   </div>
-  <div class="creator-tags">
-    <% @tags.each do |tag| %>
-      <%= link_to "##{tag}", show_tag_path(tag) %>
-    <% end %>
+  <% else %>
+  <div class="avatar">
+    <%= image_tag 'user-icon.svg' %>
   </div>
-  <% if @creator.blurb %>
-    <div class="blurb">
-      <%= @creator.blurb %>
-    </div>
   <% end %>
-  <div class="content">
-    <%= render 'shared/samples' %>
+  <div class="names">
+    <h2 class="full-name"><%= @creator.first_name %> <%= @creator.last_name %></h2>
+    <h3 class="username">@<%= @creator.username %></h3>
   </div>
-</section>
+  <div class="stats">
+    <span><%= pluralize(@samples_info.count, 'sample') %></span>
+  </div>
+</div>
+<div class="creator-tags">
+  <% @tags.each do |tag| %>
+    <%= link_to "##{tag}", show_tag_path(tag) %>
+  <% end %>
+</div>
+<% if @creator.blurb %>
+  <div class="blurb">
+    <%= @creator.blurb %>
+  </div>
+<% end %>
+<div>
+  <%= render 'shared/samples' %>
+</div>

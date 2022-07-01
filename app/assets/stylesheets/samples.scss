@@ -4,98 +4,7 @@
 
 @import 'variables';
 
-.samples-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width: 500px;
-  margin: auto;
-
-  h1 {
-    color: $dark;
-  }
-
-  form {
-    padding: 1em;
-    background-color: $dark;
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1em;
-
-      &.checkbox {
-        flex-direction: row;
-        align-items: center;
-
-        label {
-          margin: 0;
-        }
-
-        input[type=checkbox] {
-          width: 20px;
-          height: 20px;
-          margin: 0;
-          margin-left: 1em;
-        }
-      }
-
-      label {
-        margin-bottom: 0.5em;
-        color: $light;
-      }
-
-      input {
-        height: 35px;
-        font-size: 1em;
-        color: $dark;
-
-        &[type=file] {
-          padding: 0;
-          border: 1px solid $light;
-          background-color: #fff;
-          border-radius: 2px;
-        }
-
-        &::file-selector-button {
-          padding: 0.5em 1em;
-          height: 35px;
-          border: none;
-          background-color: $light;
-          font-size: 1em;
-          text-decoration: none;
-          color: $dark;
-          cursor: pointer;
-        }
-      }
-
-      textarea {
-        min-height: 70px;
-        min-width: 100%;
-        max-width: 100%;
-        font-size: 1em;
-        color: $dark;
-      }
-    }
-
-    .actions {
-      display: flex;
-      justify-content: space-between;
-
-      input,
-      a {
-        padding: 0.5em 1em;
-        border: none;
-        background-color: $light;
-        font-size: 1em;
-        text-decoration: none;
-        color: $dark;
-        cursor: pointer;
-      }
-    }
-  }
-
+.sample-wrapper {
   .name-actions {
     display: flex;
     flex-direction: column;
@@ -109,7 +18,6 @@
     h5 {
       margin-top: 0;
       text-align: center;
-      color: $dark;
     }
 
     .stats {
@@ -122,10 +30,6 @@
         align-items: center;
         padding: 5px;
 
-        &.liked {
-          background-color: $light;
-        }
-  
         span {
           font-size: 1em;
           color: $dark;
@@ -140,26 +44,12 @@
 
     .actions {
       display: flex;
+      align-items: center;
 
-      a, input{
-        padding: 0.5em 1em;
-        border: none;
-        background-color: $dark;
-        text-decoration: none;
-        font-size: 1em;
-        color: $light;
-        box-shadow: 4px 4px 4px $light;
-        cursor: pointer;
-      }
-
-      a {
+      a,
+      input {
         margin: 5px;
       }
-    }
-
-    form {
-      padding: 0;
-      margin: 5px;
     }
   }
 
@@ -184,23 +74,14 @@
     margin-bottom: 1em;
 
     a {
-      padding: 0.5em 1em;
       margin: 5px;
-      text-decoration: none;
-      background-color: $light;
-      color: $dark;
-      transition: background-color 0.4s ease, color 0.4s ease;
-
-      &:hover {
-        background-color: $dark;
-        color: $light;
-      }
     }
   }
 
   .description,
   .properties {
     padding: 1em;
+    width: 100%;
     margin-bottom: 1em;
     background-color: $dark;
     box-shadow: 4px 4px 4px $light;
@@ -212,6 +93,14 @@
     h2 {
       margin: 0;
       border-bottom: 1px solid $light;
+    }
+
+    .creator {
+      display: flex;
+
+      a {
+        margin-left: auto;
+      }
     }
   }
 
@@ -263,25 +152,6 @@
       }
     }
   }
-
-  .creator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h3 {
-      color: $dark;
-
-      a {
-        text-decoration: none;
-        color: $dark;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
 }
 
 .sample-card,
@@ -317,6 +187,7 @@
         color: $dark;
 
         a {
+          padding: 0;
           color: $dark;
           text-decoration: none;
 
@@ -393,13 +264,14 @@
 
     a {
       padding: 0.5em 1em;
+      background-color: $light !important;
       text-decoration: none;
-      color: $dark;
+      color: $dark !important;
       transition: background-color 0.4s ease, color 0.4s ease;
     
       &:hover {
-        background-color: $dark;
-        color: $light;
+        background-color: $dark !important;
+        color: $light !important;
       }
     }
   }

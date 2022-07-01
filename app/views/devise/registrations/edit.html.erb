@@ -68,8 +68,10 @@
   </div>
 <% end %>
 
-<h3>Danger Zone</h3>
+<div class="danger-zone">
+  <h3>Danger Zone</h3>
 
-<p>Unhappy? </p>
+  <p>Unhappy? </p>
 
-<%= button_to "delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'delete-account' %>
+  <%= button_to "delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+</div>

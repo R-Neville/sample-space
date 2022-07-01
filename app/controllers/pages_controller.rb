@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @recent_uploads_info = []
     recent_uploads.each do |upload|
       likes = upload.likes.all.count
-      creator = User.where(id: upload.user_id).first
+      creator = User.find(upload.user_id)
       download_count = upload.downloads.all.count
       @recent_uploads_info.push({
         sample: upload, 

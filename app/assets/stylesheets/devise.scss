@@ -142,15 +142,33 @@
       margin: 1em auto;
     }
 
-    .delete-account {
-      padding: 0.5em 1em;
-      height: 35px;
-      border: none;
-      background-color: #C0392B;
-      font-size: 1em;
-      text-decoration: none;
-      color: $light;
-      cursor: pointer;
+    .danger-zone {
+      padding: 1em;
+      border: 1px solid #C0392B;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      background-color: #FADBD8;
+      box-shadow: 4px 4px 4px $light;
+  
+      h3 {
+        margin: 0;
+        border-bottom: 1px solid #C0392B;
+        color: #C0392B;
+      }
+
+      p {
+        color: #C0392B;
+      }
+  
+      input {
+        padding: 0.5em 1em;
+        height: 35px;
+        border: none;
+        background-color: #C0392B;
+        font-size: 1em;
+        color: #FADBD8;
+        cursor: pointer;
+      }
     }
   }
 }

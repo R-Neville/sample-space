@@ -1,0 +1,177 @@
+@import 'variables';
+
+.content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  max-width: 850px;
+  margin: auto;
+
+  a {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  .actions {
+    input {
+      padding: 0.5em 1em;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  }
+
+  .light {
+    background-color: $light;
+    color: $dark;
+  }
+
+  .light-hover {
+    background-color: $light;
+    color: $dark;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    &:hover {
+      background-color: $dark;
+      color: $light
+    }
+  }
+
+  .dark {
+    background-color: $dark;
+    color: $light;
+  }
+
+  .dark-hover {
+    background-color: $dark;
+    color: $light;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    &:hover {
+      background-color: $light;
+      color: $dark;
+    }
+  }
+
+  .shadow {
+    box-shadow: 4px 4px 4px $light;
+  }
+
+  section {
+    margin-bottom: 1em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 auto;
+    text-align: center;
+    color: $dark;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  form {
+    padding: 1em;
+
+    &.button_to {
+      padding: 0;
+    }
+
+    .field,
+    .field-with-errors {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+
+      &.checkbox {
+        flex-direction: row;
+        align-items: center;
+
+        label {
+          margin: 0;
+        }
+
+        input[type=checkbox] {
+          width: 20px;
+          height: 20px;
+          margin: 0;
+          margin-left: 1em;
+        }
+      }
+
+      label {
+        margin-bottom: 0.5em;
+        color: $dark;
+      }
+
+      input {
+        height: 35px;
+        color: $dark;
+
+        &[type=file] {
+          padding: 0;
+          border: 1px solid $dark;
+          background-color: #fff;
+          border-radius: 2px;
+        }
+
+        &::file-selector-button {
+          padding: 0.5em 1em;
+          height: 35px;
+          border: none;
+          background-color: $light;
+          font-size: 1em;
+          text-decoration: none;
+          color: $dark;
+          cursor: pointer;
+        }
+      }
+
+      textarea {
+        min-height: 70px;
+        min-width: 100%;
+        max-width: 100%;
+        font-size: 1em;
+        color: $dark;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+
+      input,
+      a {
+        padding: 0.5em 1em;
+        border: none;
+        background-color: $dark;
+        font-size: 1em;
+        text-decoration: none;
+        color: $light;
+        cursor: pointer;
+      }
+    }
+  }
+}

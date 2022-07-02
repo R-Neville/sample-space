@@ -40,6 +40,7 @@
 
       .username {
         margin-bottom: 10px;
+        text-align: left;
         color: $dark;
       }
     }
@@ -61,16 +62,17 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: $dark;
+    border: 1px solid $dark;
+    background-color: $light;
 
     nav {
       display: flex;
-      background-color: $light;
+      background-color: $dark;
 
       a {
         &.current {
-          background-color: $dark;
-          color: $light;
+          background-color: $light;
+          color: $dark;
         }
       }
     }
@@ -85,7 +87,7 @@
 
         p {
           text-align: center;
-          color: $light;
+          color: $dark;
         }
   
         a {

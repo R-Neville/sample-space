@@ -1,34 +1,30 @@
-<section class="sample-section">
+<h1>Edit Sample</h1>
 
-  <h1>Edit Sample</h1>
+<%= render 'samples/shared/error_messages' %>
 
-  <%= render 'samples/shared/error_messages' %>
+<%= form_with url: edit_sample_path, model: @sample do |form| %>
+  <div class="field">
+    <%= form.label :name, "name" %>
+    <%= form.text_field :name, autocomplete: "name"  %>
+  </div>
 
-  <%= form_with url: edit_sample_path, model: @sample do |form| %>
-    <div class="field">
-      <%= form.label :name, "name" %>
-      <%= form.text_field :name, autocomplete: "name"  %>
-    </div>
+  <div class="field">
+    <%= form.label :description, "description" %>
+    <%= form.text_area :description, autocomplete: "description" %>
+  </div>
 
-    <div class="field">
-      <%= form.label :description, "description" %>
-      <%= form.text_area :description, autocomplete: "description" %>
-    </div>
+  <div class="field">
+    <%= form.label :tag_list, 'tags (separated by spaces)' %>
+    <%= form.text_field :tag_list, autocomplete: "tag_list" %>
+  </div>
 
-    <div class="field">
-      <%= form.label :tag_list, 'tags (separated by spaces)' %>
-      <%= form.text_field :tag_list, autocomplete: "tag_list" %>
-    </div>
-
-    <div class="field checkbox">
-      <%= form.label :is_public, 'I want this sample to be public' %>
-      <%= form.check_box :is_public, autocomplete: "public" %>
-    </div>
-    
-    <div class="actions">
-      <%= link_to 'back', :back %>
-      <%= form.submit 'update' %>
-    </div>
-  <% end %>
-
-</section>
+  <div class="field checkbox">
+    <%= form.label :is_public, 'I want this sample to be public' %>
+    <%= form.check_box :is_public, autocomplete: "public" %>
+  </div>
+  
+  <div class="actions">
+    <%= link_to 'back', :back %>
+    <%= form.submit 'update' %>
+  </div>
+<% end %>

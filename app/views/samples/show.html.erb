@@ -100,8 +100,12 @@
     <% end %>
     <% if current_user %>
       <%= form_with class: 'new-comment', url: sample_comments_path(@sample.id), model: @comment do |form| %>
-        <%= form.rich_text_area :content, placeholder: 'enter a comment here...' %>
-        <%= form.submit 'comment' %>
+        <div class="field">
+          <%= form.rich_text_area :content, placeholder: 'enter a comment here...' %>
+        </div>
+        <div class="actions">
+          <%= form.submit 'comment' %>
+        </div>
       <% end %>
     <% end %>
   </section>

@@ -1,8 +1,8 @@
 <div class="downloads-wrapper">
   <% if @samples_info.length == 0 %>
     <div class="nothing-to-show">
-      <p>Nothing to show...</p>
-      <%= link_to 'browse samples', browse_path, class: 'light' %>
+      <p>Nothing to show yet...</p>
+      <%= link_to 'browse samples', browse_path, class: 'dark' %>
     </div>
   <% else %>
     <%= render 'shared/samples' %>

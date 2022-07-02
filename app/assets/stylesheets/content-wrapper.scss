@@ -93,10 +93,14 @@
   }
 
   form {
+    background-color: $light;
+    border: 1px solid $dark;
     padding: 1em;
 
     &.button_to {
       padding: 0;
+      border: none !important;
+      background: none;
     }
 
     .field,
@@ -125,18 +129,18 @@
         margin-bottom: 0.5em;
         color: $dark;
       }
-
+  
       input {
         height: 35px;
         color: $dark;
-
+  
         &[type=file] {
           padding: 0;
           border: 1px solid $dark;
           background-color: #fff;
           border-radius: 2px;
         }
-
+  
         &::file-selector-button {
           padding: 0.5em 1em;
           height: 35px;
@@ -148,7 +152,7 @@
           cursor: pointer;
         }
       }
-
+  
       textarea {
         min-height: 70px;
         min-width: 100%;
@@ -156,16 +160,29 @@
         font-size: 1em;
         color: $dark;
       }
+  
+      button.trix-button {
+        border: 1px solid $dark;
+        background-color: #fff;
+      }
+    
+      trix-editor {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        border: 1px solid $dark;
+        background-color: #fff;
+      }
     }
 
     .actions {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
 
       input,
       a {
         padding: 0.5em 1em;
         border: none;
+        margin: 5px;
         background-color: $dark;
         font-size: 1em;
         text-decoration: none;

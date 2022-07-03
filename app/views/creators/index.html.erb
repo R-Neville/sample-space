@@ -2,7 +2,15 @@
 <div class="creators">
   <% @creators.each do |creator| %>
     <div class="card">
-      <%= image_tag creator.avatar, class: 'avatar' %>
+      <% if current_user.avatar.present? %>
+        <div class="avatar">
+          <%= image_tag current_user.avatar, class: 'avatar' %>
+        </div>
+      <% else %>
+        <div class="avatar">
+          <%= image_tag 'user-icon.svg', class: 'avatar' %>
+        </div>
+      <% end %>
       <h3 class="username">@<%= creator.username %></h3>
       <%= link_to "view profile", creator_path(creator.username), class: 'creator-link' %>
     </div>

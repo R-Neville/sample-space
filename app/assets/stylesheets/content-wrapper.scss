@@ -92,6 +92,12 @@
     font-size: 2em;
   }
 
+  > p {
+    padding: 1em;
+    border: 1px solid $dark;
+    background-color: $light;
+  }
+
   form {
     background-color: $light;
     border: 1px solid $dark;

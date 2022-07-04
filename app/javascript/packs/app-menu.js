@@ -1,28 +1,105 @@
 document.addEventListener('turbolinks:load', function() {
   const menu = document.getElementById('menu');
-  const headerHamburger = document.querySelector('header .hamburger');
+  const hamburger = document.querySelector('header .hamburger');
+  const hamburgerLines = hamburger.querySelectorAll('.line');
   let menuVisible = false;
 
   if (menu) {
     window.onresize =  function() {
+      // Ensure that the menu is hidden when the 
+      // page is resized above responsive breakpoint:
       if (window.innerWidth >= 760 && menuVisible) {
         menu.style.display = 'none';
         menuVisible = false;
+        horizontaliseHamburger();
+        partHambugerLinesVertically();
       }
     };
   
-    headerHamburger.addEventListener('click', () => {
-      if (menuVisible) {
-        slideUp(menu, 10);
-        menuVisible = false;
-      } else {
-        slideDown(menu, 'flex', 10);
-        menuVisible = true;
-      }
+    hamburger.addEventListener('click', handleHamburgerClick);
+  }
+
+  function handleHamburgerClick() {
+    if (!menuVisible) {
+      slideDown(menu, 'flex', 10); // Show menu
+      menuVisible = true;
+      verticaliseHamburger();
+      partHamburgerLinesHorizontally();
+    } else {
+      slideUp(menu, 10); // Hide menu
+      menuVisible = false;
+      horizontaliseHamburger();
+      partHambugerLinesVertically();
+    }
+  }
+
+  const MIN_INTERVAL_DURATION = 10;
+
+  // Transitions hamburger lines to a
+  // vertical state ready for animation:
+  function verticaliseHamburger() {
+    hamburgerLines.forEach(line => {
+      line.style.display = 'none';
+    });
+
+    hamburger.style.flexDirection = 'row';
+    
+    hamburgerLines.forEach(line => {
+      line.style.height = '35px';
+      line.style.width = '10px';
+      line.style.display = 'block';
     });
   }
 
-  const MIN_INTERVAL_DURATION = 10; 
+  // Animates the separation of hamgurger lines
+  // when vertical:
+  function partHamburgerLinesHorizontally() {
+    const targetWidth = 7;
+    let currentWidth = 10;
+    const intervalID = setInterval(() => {
+      if (currentWidth <= targetWidth) {
+        clearInterval(intervalID);
+      } else {
+        currentWidth -= 0.25;
+        hamburgerLines.forEach(line => {
+          line.style.width = currentWidth + 'px';
+        });
+      }
+    }, 5);
+  }
+
+  // Transitions hamburger lines to a
+  // horizontal state ready for animation:
+  function horizontaliseHamburger() {
+    hamburgerLines.forEach(line => {
+      line.style.display = 'none';
+    });
+
+    hamburger.style.flexDirection = 'column';
+    
+    hamburgerLines.forEach(line => {
+      line.style.height = '10px';
+      line.style.width = '35px';
+      line.style.display = 'block';
+    });
+  }
+
+  // Animates the separation of hamburger lines
+  // when horizontal:
+  function partHambugerLinesVertically() {
+    const targetHeight = 7;
+    let currentHeight = 10;
+    const intervalID = setInterval(() => {
+      if (currentHeight <= targetHeight) {
+        clearInterval(intervalID);
+      } else {
+        currentHeight -= 0.25;
+        hamburgerLines.forEach(line => {
+          line.style.height = currentHeight + 'px';
+        });
+      }
+    }, 5);
+  }
 
   function slideDown(element, displayType, durationFactor) {
     if (element.style.display === displayType) {

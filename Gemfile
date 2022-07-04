@@ -62,3 +62,5 @@ gem "file_validators", "~> 3.0"
 gem "wavefile", "~> 1.1"
 
 gem "acts-as-taggable-on", "~> 9.0"
+
+gem "aws-sdk-s3", require: false

@@ -24,7 +24,16 @@
   </div>
   
   <div class="actions">
-    <%= link_to 'back', :back %>
+    <%= link_to 'back', show_sample_path(@sample.id) %>
     <%= form.submit 'update' %>
+  </div>
+<% end %>
+
+<% if current_user && current_user.id == @sample.user_id %>
+  <div class="danger-zone">
+    <h2>DANGER ZONE</h2>
+    <div class="actions">
+      <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
+    </div>
   </div>
 <% end %>

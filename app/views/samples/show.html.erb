@@ -70,14 +70,6 @@
       <div class="value"><%= @sample.sample_rate %>Hz</div>
     </div>
   </div>
-  <% if current_user && current_user.id == @sample.user_id %>
-    <div class="danger-zone">
-      <h2>DANGER ZONE</h2>
-      <div class="actions">
-        <%= link_to 'DELETE SAMPLE', delete_sample_path(@sample), method: :delete %>
-      </div>
-    </div>
-  <% end %>
   <section class="comments-section">
     <h2>Comments</h2>
     <% @comments_info.each do |info| %>

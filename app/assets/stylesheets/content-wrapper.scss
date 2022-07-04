@@ -196,4 +196,33 @@
       }
     }
   }
+
+  .danger-zone {
+    padding: 1em;
+    border: 1px solid #C0392B;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #FADBD8;
+    box-shadow: 4px 4px 4px $light;
+
+    h2 {
+      margin: 0;
+      border-bottom: 1px solid #C0392B;
+      color: #C0392B;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1em;
+
+      a {
+        padding: 0.5em 1em;
+        background-color: #C0392B;
+        text-decoration: none;
+        color: #FADBD8;
+      }
+    }
+  }
 }

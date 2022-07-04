@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
       @comment.comment_likes.create(user_id: current_user.id)
       
       Notification.create(
-        for_id: @sample.user_id,
+        for_id: @comment.user_id,
         from_id: current_user.id,
         sample_id: @sample.id,
         notification_type: 'comment-like'

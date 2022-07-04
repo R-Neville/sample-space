@@ -137,6 +137,7 @@
   
       input {
         height: 35px;
+        font-size: 1em;
         color: $dark;
   
         &[type=file] {
@@ -150,10 +151,9 @@
           padding: 0.5em 1em;
           height: 35px;
           border: none;
-          background-color: $light;
-          font-size: 1em;
+          background-color: $dark;
           text-decoration: none;
-          color: $dark;
+          color: $light;
           cursor: pointer;
         }
       }

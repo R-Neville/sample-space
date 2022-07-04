@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   # Pages controller
   root to: 'pages#home'
-  get '/browse', to: 'pages#browse'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
 
@@ -27,6 +26,8 @@ Rails.application.routes.draw do
   get '/samples/:sample_id/comments/:comment_id/edit', to: 'comments#edit', as: 'edit_sample_comment'
   patch '/samples/:sample_id/comments/:comment_id', to: 'comments#update', as: 'update_sample_comment'
   delete '/samples/:sample_id/comments/:comment_id', to: 'comments#destroy', as: 'delete_sample_comment'
+  post '/samples/:sample_id/comments/:comment_id/like', to: 'comments#like', as: 'like_sample_comment'
+  delete '/samples/:sample_id/comments/:comment_id/unlike', to: 'comments#unlike', as: 'unlike_sample_comment'
 
   # Creators controller
   get '/creators', to: 'creators#index'

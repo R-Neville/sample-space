@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_sample
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy, :like, :unlike]
 
   def new
     @comment = @sample.comments.new
@@ -40,6 +40,29 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+    redirect_to show_sample_path(@sample.id)
+  end
+
+  def like
+    like = @comment.comment_likes.where(user_id: current_user.id).first
+    if !like
+      @comment.comment_likes.create(user_id: current_user.id)
+      
+      Notification.create(
+        for_id: @sample.user_id,
+        from_id: current_user.id,
+        sample_id: @sample.id,
+        notification_type: 'comment-like'
+      )
+    end
+    redirect_to show_sample_path(@sample.id)
+  end
+
+  def unlike
+    like = @comment.comment_likes.where(user_id: current_user.id).first
+    if like
+      like.destroy
+    end
     redirect_to show_sample_path(@sample.id)
   end
 

@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
   def home
-  end
-
-  def browse
     @popular_tags = ActsAsTaggableOn::Tag.most_used(20)
     recent_uploads = Sample.where(is_public: true).order("created_at").last(10)
     @recent_uploads_info = []

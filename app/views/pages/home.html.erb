@@ -78,7 +78,7 @@
   <div class="tags">
     <% if @recent_uploads_info.length > 0 %>
       <% @popular_tags.each do |tag| %>
-        <%= link_to "##{tag.name}", show_tag_path(tag.name) %>
+        <%= link_to "##{tag}", show_tag_path(tag) %>
       <% end %>
     <% else %>
       <div class="nothing-to-show">

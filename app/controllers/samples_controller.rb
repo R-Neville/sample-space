@@ -15,7 +15,7 @@ class SamplesController < ApplicationController
     end
 
     @comment = @sample.comments.new
-    comments = @sample.comments.order(created_at: :desc)
+    comments = @sample.comments.order(created_at: :asc)
     @comments_info = []
     comments.each do |comment|
       user = User.find(comment.user_id)

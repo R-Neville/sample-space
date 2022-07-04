@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     @nav_links = [
       {
         text: 'browse',
-        url: url_helpers.browse_path
+        url: url_helpers.root_path
       },
       {
         text: 'creators',

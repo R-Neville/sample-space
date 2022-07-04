@@ -1,0 +1,71 @@
+<section class="welcome">
+  <h2>Welcome to SampleSpace</h2>
+  <div>
+    <p>
+      The number one platform
+      for artists to share samples for use
+      in music production.
+    </p>
+    <% if !current_user %>
+      <%= link_to 'sign up', new_user_registration_path, class: 'dark' %>
+    <% end %>
+  </div>
+</section>
+<section class="recent-uploads">
+  <h2>Recent Uploads</h2>
+  <div class="uploads">
+    <% @recent_uploads_info.each do |info| %>
+      <div class="sample-card-small">
+        <div class="info-details">
+          <div>
+            <h3 class="name"><%= info[:sample].name %></h3>
+            <% if request.fullpath == profile_uploads_path %>
+              <h5 class="visibility"><%= info[:sample].is_public ? 'public' : 'private' %></h5>
+            <% end %>
+            <% if (current_user && current_user.id != info[:creator].id) || !current_user %>
+              <h5 class="creator"><%= link_to "@#{info[:creator].username}", creator_path(info[:creator].username) %>
+            <% end %>
+          </div>
+          <%= link_to 'details', show_sample_path(info[:sample]), class: 'details' %>
+        </div>
+        <audio class="preview" controls controlsList="nodownload" preload="metadata">
+          <source src="<%= rails_blob_url(info[:sample].audio_file) %>" type="<%= info[:sample].audio_file.content_type %>">
+        </audio>
+        <span class="duration"><%= info[:sample].duration %></span>
+        <div class="tags-stats">
+          <div class="tags">
+            <% if @tag %>
+              <% info[:sample].tag_list.each do |tag| %>
+                <% if tag != @tag %>
+                  <%= link_to "##{tag}",  show_tag_path(tag) %>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% info[:sample].tag_list.each do |tag| %>
+                <%= link_to "##{tag}",  show_tag_path(tag) %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="stats">
+            <div>
+              <span><%= info[:likes] %></span>
+              <%= image_tag 'like-dark.svg' %>
+            </div>
+            <div class="downloads">
+              <span><%= info[:downloads] %></span>
+              <%= image_tag 'download-dark.svg' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+<section class="popular-tags">
+  <h2>Popular Tags</h2>
+  <div class="tags">
+    <% @popular_tags.each do |tag| %>
+      <%= link_to "##{tag.name}", show_tag_path(tag.name) %>
+    <% end %>
+  </div>
+</section>

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   # Pages controller
   root to: 'pages#home'
-  get '/browse', to: 'pages#browse'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
 

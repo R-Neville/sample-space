@@ -15,4 +15,14 @@
       <%= link_to "view profile", creator_path(creator.username), class: 'creator-link' %>
     </div>
   <% end %>
+  <% if @creators.length == 0 %>
+    <div class="nothing-to-show">
+      <p>There are currently no creators...</p>
+      <% if current_user %>
+        <%= link_to 'be the first', profile_path, class: 'dark' %>
+      <% else %>
+        <%= link_to 'be the first', new_user_registration_path, class: 'dark' %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

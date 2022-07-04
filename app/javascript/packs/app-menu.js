@@ -1,7 +1,12 @@
 document.addEventListener('turbolinks:load', function() {
   const menu = document.getElementById('menu');
   const hamburger = document.querySelector('header .hamburger');
-  const hamburgerLines = hamburger.querySelectorAll('.line');
+  let hamburgerLines;
+ 
+  if (hamburger) {
+    hamburgerLines = hamburger.querySelectorAll('.line');
+  }
+
   let menuVisible = false;
 
   if (menu) {

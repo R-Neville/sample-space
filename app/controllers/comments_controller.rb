@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_sample
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy, :like]
 
   def new
     @comment = @sample.comments.new
@@ -41,6 +41,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     redirect_to show_sample_path(@sample.id)
+  end
+
+  def like
   end
 
   private

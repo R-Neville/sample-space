@@ -88,12 +88,21 @@
             <h5>@<%= info[:user].username %></h5>
             <span><%= info[:comment].created_at.strftime("%Y-%m-%d") %>
           </div>
+          <div class="likes">
+            <span><%= info[:comment].likes %></span>
+            <%= image_tag 'like-dark.svg' %>
+          </div>
         </div>
         <%= info[:comment].content %>
-        <% current_user && current_user.id == if info[:comment].user_id %>
+        <% if current_user && current_user.id == info[:comment].user_id %>
           <div class="actions">
             <%= link_to 'edit', edit_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), class: 'dark' %>
             <%= button_to 'delete', delete_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), method: :delete, class: 'dark' %>
+          </div>
+        <% end %>
+        <% if current_user && current_user.id != info[:comment].user_id %>
+          <div class="actions">
+            <%= button_to 'like', like_sample_comment_path(sample_id: info[:comment].sample_id, comment_id: info[:comment].id), method: :post, class: 'dark' %>
           </div>
         <% end %>
       </div>

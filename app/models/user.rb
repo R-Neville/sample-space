@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :received_notifications, foreign_key: 'for_id', class_name: 'Notification', dependent: :destroy
   has_many :created_notifications, foreign_key: 'from_id', class_name: 'Notification'
   has_many :comments, dependent: :destroy
+  has_many :comment_likes, dependent: :destroy
 end

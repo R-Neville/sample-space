@@ -19,7 +19,9 @@ class SamplesController < ApplicationController
     @comments_info = []
     comments.each do |comment|
       user = User.find(comment.user_id)
-      @comments_info.push({comment: comment, user: user})
+      likes = comment.comment_likes.all
+      liked = likes.select { |like| like.user_id == current_user.id }.length > 0
+      @comments_info.push({comment: comment, user: user, likes: likes.length, liked: liked })
     end
   end
 

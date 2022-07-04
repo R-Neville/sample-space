@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
         url: url_helpers.about_path
       },
       {
-        text: 'contact',
-        url: url_helpers.contact_path
+        text: 'search',
+        url: url_helpers.search_path
       }
     ]
   end

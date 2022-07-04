@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Pages controller
   root to: 'pages#home'
   get '/about', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
+  get '/search', to: 'pages#search'
 
   # Profile controller
   get '/profile', to: 'profile#index'

@@ -131,3 +131,17 @@
   text-align: center;
   color: $dark;
 }
+
+.creator-nothing-to-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border: 1px solid $dark;
+  background-color: $light;
+
+  p {
+    text-align: center;
+    color: $dark;
+  }
+}

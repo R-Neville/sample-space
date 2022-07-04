@@ -29,3 +29,8 @@
 <div>
   <%= render 'shared/samples' %>
 </div>
+<% if @samples_info.length == 0 %>
+  <div class="creator-nothing-to-show">
+    <p>Nothing to show here... YET!</p>
+  </div>
+<% end %>

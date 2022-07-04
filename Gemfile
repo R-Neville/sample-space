@@ -63,4 +63,4 @@ gem "wavefile", "~> 1.1"
 
 gem "acts-as-taggable-on", "~> 9.0"
 
-gem 'aws-sdk-s3', '~> 1.114'
+gem 'aws-sdk-s3', '~> 1.114', require: false

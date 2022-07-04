@@ -1,7 +1,7 @@
 <div class="creator-info">
   <% if @creator.avatar.present? %>
   <div class="avatar">
-    <%= image_tag @creator.avatar %>
+    <%= image_tag @creator.avatar.variant(resize_to_limit: [100, 100]) %>
   </div>
   <% else %>
   <div class="avatar">

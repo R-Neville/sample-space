@@ -50,3 +50,27 @@
     }
   }
 }
+
+.search {
+  display: flex;
+
+  input {
+    height: 35px;
+    font-size: 1em;
+
+    &[type=text] {
+      flex-grow: 1;
+    }
+
+    &[type=submit] {
+      padding: 0.5em 1em;
+      border: none;
+      margin-left: 1em;
+    }
+  }
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+}

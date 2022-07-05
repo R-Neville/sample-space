@@ -1,0 +1,15 @@
+<h2>Search SampleSpace</h2>
+<%= form_with url: search_path, method: :get, class: 'search' do |form| %>
+  <%= form.text_field :q %>
+  <%= form.submit 'search', class: 'dark' %>
+<% end %>
+<div class="results">
+  <% if @q && @q != '' %>
+    <% @results[:samples].each do |sample| %>
+      <%= sample.name %>
+    <% end %>
+    <% @results[:creators].each do |creator| %>
+      <%= creator.username %>
+    <% end %>
+  <% end %>
+</div>

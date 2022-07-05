@@ -35,9 +35,7 @@ class PagesController < ApplicationController
         end
 
         similar_tags = sample.tag_list.select { |tag| tag.downcase.include?(@q) }
-        puts
-        puts similar_tags
-        puts
+        
         if similar_tags.length > 0
           @results[:samples].push(sample)
         end

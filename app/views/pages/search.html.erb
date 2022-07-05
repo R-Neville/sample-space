@@ -6,10 +6,33 @@
 <div class="results">
   <% if @q && @q != '' %>
     <% @results[:samples].each do |sample| %>
-      <%= sample.name %>
+      <div class="sample-card">
+        <div class="info-details">
+          <div>
+            <h3 class="name"><%= sample.name %></h3>
+            <h5 class="creator"><%= link_to "@#{sample.user.username}", creator_path(sample.user.username) %>
+          </div>
+          <%= link_to 'details', show_sample_path(sample.id), class: 'details' %>
+        </div>
+        <audio class="preview" controls controlsList="nodownload" preload="metadata">
+          <source src="<%= rails_blob_url(sample.audio_file) %>" type="<%= sample.audio_file.content_type %>">
+        </audio>
+        <span class="duration"><%= sample.duration %></span>
+        <div class="tags-stats">
+          <div class="tags">
+            <% sample.tag_list.each do |tag| %>
+              <%= link_to "##{tag}",  show_tag_path(tag) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
     <% @results[:creators].each do |creator| %>
-      <%= creator.username %>
+      <a class="search-creator-card" href="<%= creator_path(creator.username)%>">
+        <%= image_tag creator.avatar.variant(resize_to_limit: [100, 100]) %>
+        <h3>@<%= creator.username %></h3>
+        <span>profile</span>
+      </a>
     <% end %>
   <% end %>
 </div>

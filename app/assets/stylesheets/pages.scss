@@ -53,6 +53,7 @@
 
 .search {
   display: flex;
+  margin-bottom: 1em;
 
   input {
     height: 35px;
@@ -60,12 +61,14 @@
 
     &[type=text] {
       flex-grow: 1;
+      min-width: 150px;
     }
 
     &[type=submit] {
       padding: 0.5em 1em;
       border: none;
       margin-left: 1em;
+      cursor: pointer;
     }
   }
 }

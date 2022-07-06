@@ -1,4 +1,6 @@
 <div id="menu">
   <%= render 'shared/nav' %>
-  <%= render 'shared/login-register' %>
+  <% if !current_user %>
+    <%= render 'shared/login-register' %>
+  <% end %>
 </div>

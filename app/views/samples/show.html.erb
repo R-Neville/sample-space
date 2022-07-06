@@ -73,7 +73,7 @@
     <% @comments_info.each do |info| %>
       <div class="comment-card">
         <div class="user">
-          <% if info[:user].avatar %>
+          <% if info[:user].avatar.present? %>
             <%= image_tag info[:user].avatar.variant(resize_to_limit: [100, 100]) %>
           <% else %>
             <%= image_tag 'user-icon-dark.png' %>

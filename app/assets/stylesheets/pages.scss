@@ -50,3 +50,31 @@
     }
   }
 }
+
+.search {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  input {
+    height: 35px;
+    font-size: 1em;
+
+    &[type=text] {
+      flex-grow: 1;
+      min-width: 150px;
+    }
+
+    &[type=submit] {
+      padding: 0.5em 1em;
+      border: none;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+  }
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+}

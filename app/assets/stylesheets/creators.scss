@@ -145,3 +145,27 @@
     color: $dark;
   }
 }
+
+.search-creator-card {
+  display: flex;
+  align-items: center;
+  padding: 1em !important;
+  border: 1px solid $dark;
+  background-color: $light;
+
+  img {
+    width: 35px;
+    height: 35px;
+    margin-right: 1em;
+  }
+
+  h3 {
+    margin: 0;
+    margin-right: auto;
+    color: $dark;
+  }
+
+  span {
+    color: $dark;
+  }
+}

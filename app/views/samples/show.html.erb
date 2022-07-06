@@ -73,7 +73,11 @@
     <% @comments_info.each do |info| %>
       <div class="comment-card">
         <div class="user">
-          <%= image_tag info[:user].avatar.variant(resize_to_limit: [100, 100]) %>
+          <% if info[:user].avatar %>
+            <%= image_tag info[:user].avatar.variant(resize_to_limit: [100, 100]) %>
+          <% else %>
+            <%= image_tag 'user-icon-dark.png' %>
+          <% end %>
           <div class="details">
             <h5>@<%= info[:user].username %></h5>
             <span><%= info[:comment].created_at.strftime("%Y-%m-%d") %>

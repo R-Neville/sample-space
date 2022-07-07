@@ -115,11 +115,15 @@
       flex-direction: column;
       height: auto;
 
+      .avatar {
+        margin: 0 !important;
+      }
+
       .names {
         margin: 0 !important;
      
         * {
-          text-align: center;
+          text-align: center !important;
         }
       }
     }
@@ -128,6 +132,10 @@
       nav {
         flex-direction: column;
         border-bottom: 1px solid $light;
+
+        a {
+          text-align: center;
+        }
       }
     }
   }

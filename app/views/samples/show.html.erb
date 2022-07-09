@@ -69,7 +69,9 @@
     </div>
   </div>
   <section class="comments-section">
-    <h2>Comments</h2>
+    <% if @comments_info.length > 0 %>
+      <h2>Comments</h2>
+    <% end %>
     <% @comments_info.each do |info| %>
       <div class="comment-card">
         <div class="user">

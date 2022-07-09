@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   get '/creators/:username', to: 'creators#show', as: 'creator'
 
   # Tags controller
-  get '/tags', to: 'tags#index'
   get '/tags/:tag', to: 'tags#show', as: 'show_tag'
 
   # Downloads controller

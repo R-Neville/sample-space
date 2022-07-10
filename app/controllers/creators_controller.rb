@@ -4,7 +4,7 @@ class CreatorsController < ApplicationController
   end
 
   def show
-    # Can't use 'find' here, because
+    # Can't use 'find' here because
     # we need to select the creator by
     # their username - select * from 
     # users where username = params[:username]:
@@ -16,7 +16,6 @@ class CreatorsController < ApplicationController
     # @creator.id and is_public = true:
     samples = @creator.samples.where(is_public: true)
     
-    # Get all tags used by the creator:
     @tags = []
     # Here, we are gathering a list
     # of all the tags for all the 

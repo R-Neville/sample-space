@@ -27,14 +27,23 @@ plenty of that in the controllers.
 
 ## Installation & Usage
 
-Clone the repo and run:
+Clone the repo:
+
+```
+git clone https://github.com/R-Neville/sample-space.git
+```
+
+Enter the repo:
+
+```
+cd sample-space
+```
+
+Install the dependencies:
 
 ```
 bundle install
-
 ```
-
-in the project's root directory.
 
 After the installation process is complete, run the following two commands in the project's root directory:
 
@@ -43,4 +52,4 @@ rails db:migrate
 rails action_text:install
 ```
 
-When they have completed, you can start the application by issueing `rails s` (in the project's root directory).
+When they have completed, you can start the application by issuing `rails s` (in the project's root directory).
